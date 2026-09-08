@@ -1,0 +1,3464 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1100</width>
+    <height>721</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">#btnPlant:checked,
+#btnDevice:checked,
+#btnSystem:checked {
+    background-color:rgba(92, 150, 61, 90)
+}
+
+#btnSystemLog:checked,
+#btnPlantLog:checked,
+#btnSystemSettings:checked,
+#btnDeviceStatus:checked,
+#btnCareConfig:checked,
+#btnAutoCare:checked,
+#btnManualCare:checked {
+    background-color:rgba(92, 150, 61, 60)
+}
+
+#btnPlant,
+#btnDevice,
+#btnSystem,
+#btnHome,
+#btnSystemLog,
+#btnPlantLog,
+#btnSystemSettings,
+#btnDeviceStatus,
+#btnCareConfig,
+#btnAutoCare,
+#btnManualCare{
+    border: none;
+    background: transparent;
+}</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QStackedWidget" name="mainStack">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>50</y>
+      <width>1031</width>
+      <height>651</height>
+     </rect>
+    </property>
+    <property name="currentIndex">
+     <number>0</number>
+    </property>
+    <widget class="QWidget" name="pagePlant">
+     <widget class="QScrollArea" name="scrollPlantsMenu">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>0</y>
+        <width>291</width>
+        <height>621</height>
+       </rect>
+      </property>
+      <property name="widgetResizable">
+       <bool>true</bool>
+      </property>
+      <widget class="QWidget" name="scrollPlantsMenuContents">
+       <property name="geometry">
+        <rect>
+         <x>0</x>
+         <y>0</y>
+         <width>289</width>
+         <height>619</height>
+        </rect>
+       </property>
+       <widget class="QTreeWidget" name="treePlants">
+        <property name="geometry">
+         <rect>
+          <x>0</x>
+          <y>0</y>
+          <width>291</width>
+          <height>621</height>
+         </rect>
+        </property>
+        <column>
+         <property name="text">
+          <string/>
+         </property>
+        </column>
+       </widget>
+      </widget>
+     </widget>
+     <widget class="QWidget" name="plants" native="true">
+      <property name="geometry">
+       <rect>
+        <x>290</x>
+        <y>0</y>
+        <width>801</width>
+        <height>621</height>
+       </rect>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="pageDevice">
+     <widget class="QStackedWidget" name="deviceStack">
+      <property name="geometry">
+       <rect>
+        <x>290</x>
+        <y>0</y>
+        <width>751</width>
+        <height>621</height>
+       </rect>
+      </property>
+      <property name="currentIndex">
+       <number>3</number>
+      </property>
+      <widget class="QWidget" name="deviceStatusPage">
+       <widget class="QLabel" name="lblDSIrrigation">
+        <property name="geometry">
+         <rect>
+          <x>10</x>
+          <y>10</y>
+          <width>69</width>
+          <height>19</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <pointsize>10</pointsize>
+         </font>
+        </property>
+        <property name="text">
+         <string>滴灌设备</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="lblDSLighting">
+        <property name="geometry">
+         <rect>
+          <x>250</x>
+          <y>10</y>
+          <width>69</width>
+          <height>19</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <pointsize>10</pointsize>
+         </font>
+        </property>
+        <property name="text">
+         <string>补光设备</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="lblDSFan">
+        <property name="geometry">
+         <rect>
+          <x>490</x>
+          <y>10</y>
+          <width>69</width>
+          <height>19</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <pointsize>10</pointsize>
+         </font>
+        </property>
+        <property name="text">
+         <string>风扇</string>
+        </property>
+       </widget>
+       <widget class="QScrollArea" name="scrollDSIrrigation">
+        <property name="geometry">
+         <rect>
+          <x>10</x>
+          <y>40</y>
+          <width>231</width>
+          <height>541</height>
+         </rect>
+        </property>
+        <property name="widgetResizable">
+         <bool>true</bool>
+        </property>
+        <widget class="QWidget" name="scrollAreaWidgetContents_2">
+         <property name="geometry">
+          <rect>
+           <x>0</x>
+           <y>0</y>
+           <width>229</width>
+           <height>539</height>
+          </rect>
+         </property>
+         <widget class="QLabel" name="lblIDName1">
+          <property name="geometry">
+           <rect>
+            <x>10</x>
+            <y>10</y>
+            <width>81</width>
+            <height>19</height>
+           </rect>
+          </property>
+          <property name="font">
+           <font>
+            <bold>true</bold>
+           </font>
+          </property>
+          <property name="text">
+           <string>北阳台滴灌</string>
+          </property>
+         </widget>
+         <widget class="QLabel" name="lblIDName2">
+          <property name="geometry">
+           <rect>
+            <x>10</x>
+            <y>40</y>
+            <width>81</width>
+            <height>19</height>
+           </rect>
+          </property>
+          <property name="font">
+           <font>
+            <bold>true</bold>
+           </font>
+          </property>
+          <property name="text">
+           <string>南阳台滴灌</string>
+          </property>
+         </widget>
+         <widget class="QLabel" name="lblIDName3">
+          <property name="geometry">
+           <rect>
+            <x>10</x>
+            <y>70</y>
+            <width>81</width>
+            <height>19</height>
+           </rect>
+          </property>
+          <property name="font">
+           <font>
+            <bold>true</bold>
+           </font>
+          </property>
+          <property name="text">
+           <string>客厅滴灌</string>
+          </property>
+         </widget>
+         <widget class="QLabel" name="lblIDStatus1">
+          <property name="geometry">
+           <rect>
+            <x>160</x>
+            <y>10</y>
+            <width>51</width>
+            <height>19</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>运行中</string>
+          </property>
+         </widget>
+         <widget class="QLabel" name="lblIDStatus2">
+          <property name="geometry">
+           <rect>
+            <x>160</x>
+            <y>40</y>
+            <width>51</width>
+            <height>19</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>已停机</string>
+          </property>
+         </widget>
+         <widget class="QLabel" name="lblIDStatus3">
+          <property name="geometry">
+           <rect>
+            <x>160</x>
+            <y>68</y>
+            <width>51</width>
+            <height>21</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>已停机</string>
+          </property>
+         </widget>
+        </widget>
+       </widget>
+       <widget class="QScrollArea" name="scrollDSLighting">
+        <property name="geometry">
+         <rect>
+          <x>250</x>
+          <y>40</y>
+          <width>231</width>
+          <height>541</height>
+         </rect>
+        </property>
+        <property name="widgetResizable">
+         <bool>true</bool>
+        </property>
+        <widget class="QWidget" name="scrollAreaWidgetContents_3">
+         <property name="geometry">
+          <rect>
+           <x>0</x>
+           <y>0</y>
+           <width>229</width>
+           <height>539</height>
+          </rect>
+         </property>
+         <widget class="QLabel" name="lblLDName1">
+          <property name="geometry">
+           <rect>
+            <x>10</x>
+            <y>10</y>
+            <width>101</width>
+            <height>19</height>
+           </rect>
+          </property>
+          <property name="font">
+           <font>
+            <bold>true</bold>
+           </font>
+          </property>
+          <property name="text">
+           <string>北阳台补光灯1</string>
+          </property>
+         </widget>
+         <widget class="QLabel" name="lblLDName2">
+          <property name="geometry">
+           <rect>
+            <x>10</x>
+            <y>40</y>
+            <width>101</width>
+            <height>19</height>
+           </rect>
+          </property>
+          <property name="font">
+           <font>
+            <bold>true</bold>
+           </font>
+          </property>
+          <property name="text">
+           <string>北阳台补光灯2</string>
+          </property>
+         </widget>
+         <widget class="QLabel" name="lblLDStatus2">
+          <property name="geometry">
+           <rect>
+            <x>170</x>
+            <y>40</y>
+            <width>51</width>
+            <height>19</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>运行中</string>
+          </property>
+         </widget>
+         <widget class="QLabel" name="lblLDStatus1">
+          <property name="geometry">
+           <rect>
+            <x>170</x>
+            <y>10</y>
+            <width>51</width>
+            <height>21</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>已停机</string>
+          </property>
+         </widget>
+        </widget>
+       </widget>
+       <widget class="QScrollArea" name="scrollDSFan">
+        <property name="geometry">
+         <rect>
+          <x>490</x>
+          <y>40</y>
+          <width>231</width>
+          <height>541</height>
+         </rect>
+        </property>
+        <property name="widgetResizable">
+         <bool>true</bool>
+        </property>
+        <widget class="QWidget" name="scrollAreaWidgetContents_4">
+         <property name="geometry">
+          <rect>
+           <x>0</x>
+           <y>0</y>
+           <width>229</width>
+           <height>539</height>
+          </rect>
+         </property>
+         <widget class="QLabel" name="lblFDName1">
+          <property name="geometry">
+           <rect>
+            <x>10</x>
+            <y>10</y>
+            <width>81</width>
+            <height>19</height>
+           </rect>
+          </property>
+          <property name="font">
+           <font>
+            <bold>true</bold>
+           </font>
+          </property>
+          <property name="text">
+           <string>客厅风扇</string>
+          </property>
+         </widget>
+         <widget class="QLabel" name="lblFDName2">
+          <property name="geometry">
+           <rect>
+            <x>10</x>
+            <y>40</y>
+            <width>81</width>
+            <height>19</height>
+           </rect>
+          </property>
+          <property name="font">
+           <font>
+            <bold>true</bold>
+           </font>
+          </property>
+          <property name="text">
+           <string>南阳台风扇</string>
+          </property>
+         </widget>
+         <widget class="QLabel" name="lblFDStatus1">
+          <property name="geometry">
+           <rect>
+            <x>170</x>
+            <y>10</y>
+            <width>51</width>
+            <height>21</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>已停机</string>
+          </property>
+         </widget>
+         <widget class="QLabel" name="lblFDStatus2">
+          <property name="geometry">
+           <rect>
+            <x>170</x>
+            <y>40</y>
+            <width>51</width>
+            <height>21</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>已停机</string>
+          </property>
+         </widget>
+        </widget>
+       </widget>
+       <widget class="QPushButton" name="btnAddDevice">
+        <property name="geometry">
+         <rect>
+          <x>640</x>
+          <y>590</y>
+          <width>93</width>
+          <height>28</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>新增设备</string>
+        </property>
+       </widget>
+      </widget>
+      <widget class="QWidget" name="careConfigPage">
+       <widget class="QLabel" name="lblCCFan">
+        <property name="geometry">
+         <rect>
+          <x>490</x>
+          <y>10</y>
+          <width>69</width>
+          <height>19</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <pointsize>10</pointsize>
+         </font>
+        </property>
+        <property name="text">
+         <string>风扇</string>
+        </property>
+       </widget>
+       <widget class="QScrollArea" name="scrollCCLighting">
+        <property name="geometry">
+         <rect>
+          <x>250</x>
+          <y>40</y>
+          <width>231</width>
+          <height>541</height>
+         </rect>
+        </property>
+        <property name="widgetResizable">
+         <bool>true</bool>
+        </property>
+        <widget class="QWidget" name="scrollAreaWidgetContents_6">
+         <property name="geometry">
+          <rect>
+           <x>0</x>
+           <y>0</y>
+           <width>229</width>
+           <height>539</height>
+          </rect>
+         </property>
+         <widget class="QLabel" name="lblCCLDName1">
+          <property name="geometry">
+           <rect>
+            <x>10</x>
+            <y>10</y>
+            <width>101</width>
+            <height>19</height>
+           </rect>
+          </property>
+          <property name="font">
+           <font>
+            <bold>true</bold>
+           </font>
+          </property>
+          <property name="text">
+           <string>北阳台补光灯1</string>
+          </property>
+         </widget>
+         <widget class="QLabel" name="lblCCLDName2">
+          <property name="geometry">
+           <rect>
+            <x>10</x>
+            <y>180</y>
+            <width>101</width>
+            <height>19</height>
+           </rect>
+          </property>
+          <property name="font">
+           <font>
+            <bold>true</bold>
+           </font>
+          </property>
+          <property name="text">
+           <string>北阳台补光灯2</string>
+          </property>
+         </widget>
+         <widget class="QComboBox" name="cmbCCLDLevel1">
+          <property name="geometry">
+           <rect>
+            <x>110</x>
+            <y>130</y>
+            <width>71</width>
+            <height>25</height>
+           </rect>
+          </property>
+          <property name="currentIndex">
+           <number>2</number>
+          </property>
+          <item>
+           <property name="text">
+            <string>1档</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>2档</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>3档</string>
+           </property>
+          </item>
+         </widget>
+         <widget class="QLabel" name="lblCCLDLevel1">
+          <property name="geometry">
+           <rect>
+            <x>30</x>
+            <y>130</y>
+            <width>31</width>
+            <height>19</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>档位</string>
+          </property>
+         </widget>
+         <widget class="QLabel" name="lblCCLDPeriod1">
+          <property name="geometry">
+           <rect>
+            <x>30</x>
+            <y>40</y>
+            <width>201</width>
+            <height>19</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>周期                                  小时</string>
+          </property>
+         </widget>
+         <widget class="QLineEdit" name="editCCLDRepeat1">
+          <property name="geometry">
+           <rect>
+            <x>110</x>
+            <y>100</y>
+            <width>51</width>
+            <height>21</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>15</string>
+          </property>
+         </widget>
+         <widget class="QLineEdit" name="editCCLDPeriod1">
+          <property name="geometry">
+           <rect>
+            <x>110</x>
+            <y>40</y>
+            <width>51</width>
+            <height>21</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>24</string>
+          </property>
+         </widget>
+         <widget class="QLabel" name="lblCCLDDuration1">
+          <property name="geometry">
+           <rect>
+            <x>30</x>
+            <y>70</y>
+            <width>201</width>
+            <height>19</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>单次时长                           小时</string>
+          </property>
+         </widget>
+         <widget class="QLabel" name="lblCCLDRepeat1">
+          <property name="geometry">
+           <rect>
+            <x>30</x>
+            <y>100</y>
+            <width>201</width>
+            <height>19</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>重复次数                           次</string>
+          </property>
+         </widget>
+         <widget class="QLineEdit" name="editCCLDDuration1">
+          <property name="geometry">
+           <rect>
+            <x>110</x>
+            <y>70</y>
+            <width>51</width>
+            <height>21</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>8</string>
+          </property>
+         </widget>
+         <widget class="QLineEdit" name="editCCLDPeriod2">
+          <property name="geometry">
+           <rect>
+            <x>110</x>
+            <y>210</y>
+            <width>51</width>
+            <height>21</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>24</string>
+          </property>
+         </widget>
+         <widget class="QLineEdit" name="editCCLDRepeat2">
+          <property name="geometry">
+           <rect>
+            <x>110</x>
+            <y>270</y>
+            <width>51</width>
+            <height>21</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>15</string>
+          </property>
+         </widget>
+         <widget class="QLabel" name="lblCCLDDuration2">
+          <property name="geometry">
+           <rect>
+            <x>30</x>
+            <y>240</y>
+            <width>191</width>
+            <height>19</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>单次时长                           小时</string>
+          </property>
+         </widget>
+         <widget class="QLabel" name="lblCCLDRepeat2">
+          <property name="geometry">
+           <rect>
+            <x>30</x>
+            <y>270</y>
+            <width>191</width>
+            <height>19</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>重复次数                           次</string>
+          </property>
+         </widget>
+         <widget class="QLabel" name="lblCCLDLevel2">
+          <property name="geometry">
+           <rect>
+            <x>30</x>
+            <y>300</y>
+            <width>31</width>
+            <height>19</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>档位</string>
+          </property>
+         </widget>
+         <widget class="QComboBox" name="cmbCCLDLevel2">
+          <property name="geometry">
+           <rect>
+            <x>110</x>
+            <y>300</y>
+            <width>71</width>
+            <height>25</height>
+           </rect>
+          </property>
+          <property name="currentIndex">
+           <number>1</number>
+          </property>
+          <item>
+           <property name="text">
+            <string>1档</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>2档</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>3档</string>
+           </property>
+          </item>
+         </widget>
+         <widget class="QLineEdit" name="editCCLDDuration2">
+          <property name="geometry">
+           <rect>
+            <x>110</x>
+            <y>240</y>
+            <width>51</width>
+            <height>21</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>6</string>
+          </property>
+         </widget>
+         <widget class="QLabel" name="lblCCLDPeriod2">
+          <property name="geometry">
+           <rect>
+            <x>30</x>
+            <y>210</y>
+            <width>201</width>
+            <height>19</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>周期                                  小时</string>
+          </property>
+         </widget>
+         <zorder>lblCCLDRepeat2</zorder>
+         <zorder>lblCCLDPeriod2</zorder>
+         <zorder>lblCCLDRepeat1</zorder>
+         <zorder>lblCCLDName1</zorder>
+         <zorder>lblCCLDName2</zorder>
+         <zorder>cmbCCLDLevel1</zorder>
+         <zorder>lblCCLDLevel1</zorder>
+         <zorder>lblCCLDPeriod1</zorder>
+         <zorder>editCCLDRepeat1</zorder>
+         <zorder>editCCLDPeriod1</zorder>
+         <zorder>lblCCLDDuration1</zorder>
+         <zorder>editCCLDDuration1</zorder>
+         <zorder>editCCLDPeriod2</zorder>
+         <zorder>editCCLDRepeat2</zorder>
+         <zorder>lblCCLDDuration2</zorder>
+         <zorder>lblCCLDLevel2</zorder>
+         <zorder>cmbCCLDLevel2</zorder>
+         <zorder>editCCLDDuration2</zorder>
+        </widget>
+       </widget>
+       <widget class="QScrollArea" name="scrollCCIrrigation">
+        <property name="geometry">
+         <rect>
+          <x>10</x>
+          <y>40</y>
+          <width>231</width>
+          <height>541</height>
+         </rect>
+        </property>
+        <property name="widgetResizable">
+         <bool>true</bool>
+        </property>
+        <widget class="QWidget" name="scrollAreaWidgetContents_7">
+         <property name="geometry">
+          <rect>
+           <x>0</x>
+           <y>0</y>
+           <width>229</width>
+           <height>539</height>
+          </rect>
+         </property>
+         <widget class="QLabel" name="lblCCIDName1">
+          <property name="geometry">
+           <rect>
+            <x>10</x>
+            <y>10</y>
+            <width>81</width>
+            <height>19</height>
+           </rect>
+          </property>
+          <property name="font">
+           <font>
+            <bold>true</bold>
+           </font>
+          </property>
+          <property name="text">
+           <string>北阳台滴灌</string>
+          </property>
+         </widget>
+         <widget class="QLabel" name="lblCCIDName2">
+          <property name="geometry">
+           <rect>
+            <x>10</x>
+            <y>180</y>
+            <width>81</width>
+            <height>19</height>
+           </rect>
+          </property>
+          <property name="font">
+           <font>
+            <bold>true</bold>
+           </font>
+          </property>
+          <property name="text">
+           <string>南阳台滴灌</string>
+          </property>
+         </widget>
+         <widget class="QLabel" name="lblCCIDName3">
+          <property name="geometry">
+           <rect>
+            <x>10</x>
+            <y>350</y>
+            <width>81</width>
+            <height>19</height>
+           </rect>
+          </property>
+          <property name="font">
+           <font>
+            <bold>true</bold>
+           </font>
+          </property>
+          <property name="text">
+           <string>客厅滴灌</string>
+          </property>
+         </widget>
+         <widget class="QLabel" name="lblCCIDPeriod1">
+          <property name="geometry">
+           <rect>
+            <x>40</x>
+            <y>40</y>
+            <width>171</width>
+            <height>19</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>周期                                小时</string>
+          </property>
+         </widget>
+         <widget class="QLabel" name="lblCCIDDuration1">
+          <property name="geometry">
+           <rect>
+            <x>40</x>
+            <y>70</y>
+            <width>181</width>
+            <height>19</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>单次时长                         分钟</string>
+          </property>
+         </widget>
+         <widget class="QLabel" name="lblCCIDRepeat1">
+          <property name="geometry">
+           <rect>
+            <x>40</x>
+            <y>100</y>
+            <width>181</width>
+            <height>19</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>重复次数                         次</string>
+          </property>
+         </widget>
+         <widget class="QLabel" name="lblCCIDLevel1">
+          <property name="geometry">
+           <rect>
+            <x>40</x>
+            <y>130</y>
+            <width>31</width>
+            <height>19</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>档位</string>
+          </property>
+         </widget>
+         <widget class="QLineEdit" name="editCCIDPeriod1">
+          <property name="geometry">
+           <rect>
+            <x>120</x>
+            <y>40</y>
+            <width>51</width>
+            <height>21</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>72</string>
+          </property>
+         </widget>
+         <widget class="QLineEdit" name="editCCIDDuration1">
+          <property name="geometry">
+           <rect>
+            <x>120</x>
+            <y>70</y>
+            <width>51</width>
+            <height>21</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>20</string>
+          </property>
+         </widget>
+         <widget class="QLineEdit" name="editCCIDRepeat1">
+          <property name="geometry">
+           <rect>
+            <x>120</x>
+            <y>100</y>
+            <width>51</width>
+            <height>21</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>10</string>
+          </property>
+         </widget>
+         <widget class="QComboBox" name="cmbCCIDLevel1">
+          <property name="geometry">
+           <rect>
+            <x>120</x>
+            <y>130</y>
+            <width>71</width>
+            <height>25</height>
+           </rect>
+          </property>
+          <item>
+           <property name="text">
+            <string>1档</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>2档</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>3档</string>
+           </property>
+          </item>
+         </widget>
+         <widget class="QComboBox" name="cmbCCIDLevel2">
+          <property name="geometry">
+           <rect>
+            <x>120</x>
+            <y>300</y>
+            <width>71</width>
+            <height>25</height>
+           </rect>
+          </property>
+          <property name="currentIndex">
+           <number>1</number>
+          </property>
+          <item>
+           <property name="text">
+            <string>1档</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>2档</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>3档</string>
+           </property>
+          </item>
+         </widget>
+         <widget class="QLabel" name="lblCCIDLevel2">
+          <property name="geometry">
+           <rect>
+            <x>40</x>
+            <y>300</y>
+            <width>31</width>
+            <height>19</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>档位</string>
+          </property>
+         </widget>
+         <widget class="QLabel" name="lblCCIDPeriod2">
+          <property name="geometry">
+           <rect>
+            <x>40</x>
+            <y>210</y>
+            <width>201</width>
+            <height>19</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>周期                                小时</string>
+          </property>
+         </widget>
+         <widget class="QLineEdit" name="editCCIDRepeat2">
+          <property name="geometry">
+           <rect>
+            <x>120</x>
+            <y>270</y>
+            <width>51</width>
+            <height>21</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>30</string>
+          </property>
+         </widget>
+         <widget class="QLineEdit" name="editCCIDPeriod2">
+          <property name="geometry">
+           <rect>
+            <x>120</x>
+            <y>210</y>
+            <width>51</width>
+            <height>21</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>24</string>
+          </property>
+         </widget>
+         <widget class="QLabel" name="lblCCIDDuration2">
+          <property name="geometry">
+           <rect>
+            <x>40</x>
+            <y>240</y>
+            <width>181</width>
+            <height>19</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>单次时长                         分钟</string>
+          </property>
+         </widget>
+         <widget class="QLabel" name="lblCCIDRepeat2">
+          <property name="geometry">
+           <rect>
+            <x>40</x>
+            <y>270</y>
+            <width>191</width>
+            <height>19</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>重复次数                         次</string>
+          </property>
+         </widget>
+         <widget class="QLineEdit" name="editCCIDDuration2">
+          <property name="geometry">
+           <rect>
+            <x>120</x>
+            <y>240</y>
+            <width>51</width>
+            <height>21</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>10</string>
+          </property>
+         </widget>
+         <widget class="QComboBox" name="cmbCCIDLevel3">
+          <property name="geometry">
+           <rect>
+            <x>120</x>
+            <y>470</y>
+            <width>71</width>
+            <height>25</height>
+           </rect>
+          </property>
+          <item>
+           <property name="text">
+            <string>1档</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>2档</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>3档</string>
+           </property>
+          </item>
+         </widget>
+         <widget class="QLabel" name="lblCCIDLevel3">
+          <property name="geometry">
+           <rect>
+            <x>40</x>
+            <y>470</y>
+            <width>31</width>
+            <height>19</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>档位</string>
+          </property>
+         </widget>
+         <widget class="QLabel" name="lblCCIDPeriod3">
+          <property name="geometry">
+           <rect>
+            <x>40</x>
+            <y>380</y>
+            <width>191</width>
+            <height>19</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>周期                                小时</string>
+          </property>
+         </widget>
+         <widget class="QLineEdit" name="editCCIDRepeat3">
+          <property name="geometry">
+           <rect>
+            <x>120</x>
+            <y>440</y>
+            <width>51</width>
+            <height>21</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>3</string>
+          </property>
+         </widget>
+         <widget class="QLineEdit" name="editCCIDPeriod3">
+          <property name="geometry">
+           <rect>
+            <x>120</x>
+            <y>380</y>
+            <width>51</width>
+            <height>21</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>240</string>
+          </property>
+         </widget>
+         <widget class="QLabel" name="lblCCIDDuration3">
+          <property name="geometry">
+           <rect>
+            <x>40</x>
+            <y>410</y>
+            <width>171</width>
+            <height>19</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>单次时长                         分钟</string>
+          </property>
+         </widget>
+         <widget class="QLabel" name="lblCCIDRepeat3">
+          <property name="geometry">
+           <rect>
+            <x>40</x>
+            <y>440</y>
+            <width>181</width>
+            <height>19</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>重复次数                         次</string>
+          </property>
+         </widget>
+         <widget class="QLineEdit" name="editCCIDDuration3">
+          <property name="geometry">
+           <rect>
+            <x>120</x>
+            <y>410</y>
+            <width>51</width>
+            <height>21</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>10</string>
+          </property>
+         </widget>
+         <zorder>lblCCIDRepeat3</zorder>
+         <zorder>lblCCIDRepeat2</zorder>
+         <zorder>lblCCIDName1</zorder>
+         <zorder>lblCCIDName2</zorder>
+         <zorder>lblCCIDName3</zorder>
+         <zorder>lblCCIDPeriod1</zorder>
+         <zorder>lblCCIDDuration1</zorder>
+         <zorder>lblCCIDRepeat1</zorder>
+         <zorder>lblCCIDLevel1</zorder>
+         <zorder>editCCIDPeriod1</zorder>
+         <zorder>editCCIDDuration1</zorder>
+         <zorder>editCCIDRepeat1</zorder>
+         <zorder>cmbCCIDLevel1</zorder>
+         <zorder>cmbCCIDLevel2</zorder>
+         <zorder>lblCCIDLevel2</zorder>
+         <zorder>lblCCIDPeriod2</zorder>
+         <zorder>editCCIDRepeat2</zorder>
+         <zorder>editCCIDPeriod2</zorder>
+         <zorder>lblCCIDDuration2</zorder>
+         <zorder>editCCIDDuration2</zorder>
+         <zorder>cmbCCIDLevel3</zorder>
+         <zorder>lblCCIDLevel3</zorder>
+         <zorder>lblCCIDPeriod3</zorder>
+         <zorder>editCCIDRepeat3</zorder>
+         <zorder>editCCIDPeriod3</zorder>
+         <zorder>lblCCIDDuration3</zorder>
+         <zorder>editCCIDDuration3</zorder>
+        </widget>
+       </widget>
+       <widget class="QLabel" name="lblCCIrrigation">
+        <property name="geometry">
+         <rect>
+          <x>10</x>
+          <y>10</y>
+          <width>69</width>
+          <height>19</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <pointsize>10</pointsize>
+         </font>
+        </property>
+        <property name="text">
+         <string>滴灌设备</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="lblCCLighting">
+        <property name="geometry">
+         <rect>
+          <x>250</x>
+          <y>10</y>
+          <width>69</width>
+          <height>19</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <pointsize>10</pointsize>
+         </font>
+        </property>
+        <property name="text">
+         <string>补光设备</string>
+        </property>
+       </widget>
+       <widget class="QScrollArea" name="scrollCCFan">
+        <property name="geometry">
+         <rect>
+          <x>490</x>
+          <y>40</y>
+          <width>231</width>
+          <height>541</height>
+         </rect>
+        </property>
+        <property name="widgetResizable">
+         <bool>true</bool>
+        </property>
+        <widget class="QWidget" name="scrollAreaWidgetContents_5">
+         <property name="geometry">
+          <rect>
+           <x>0</x>
+           <y>0</y>
+           <width>229</width>
+           <height>539</height>
+          </rect>
+         </property>
+         <widget class="QLabel" name="lblCCFDName1">
+          <property name="geometry">
+           <rect>
+            <x>10</x>
+            <y>10</y>
+            <width>81</width>
+            <height>19</height>
+           </rect>
+          </property>
+          <property name="font">
+           <font>
+            <bold>true</bold>
+           </font>
+          </property>
+          <property name="text">
+           <string>客厅风扇</string>
+          </property>
+         </widget>
+         <widget class="QLabel" name="lblCCFDName2">
+          <property name="geometry">
+           <rect>
+            <x>10</x>
+            <y>180</y>
+            <width>81</width>
+            <height>19</height>
+           </rect>
+          </property>
+          <property name="font">
+           <font>
+            <bold>true</bold>
+           </font>
+          </property>
+          <property name="text">
+           <string>南阳台风扇</string>
+          </property>
+         </widget>
+         <widget class="QComboBox" name="cmbCCFDLevel1">
+          <property name="geometry">
+           <rect>
+            <x>110</x>
+            <y>130</y>
+            <width>71</width>
+            <height>25</height>
+           </rect>
+          </property>
+          <item>
+           <property name="text">
+            <string>1档</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>2档</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>3档</string>
+           </property>
+          </item>
+         </widget>
+         <widget class="QLineEdit" name="editCCFDRepeat1">
+          <property name="geometry">
+           <rect>
+            <x>110</x>
+            <y>100</y>
+            <width>51</width>
+            <height>21</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>10</string>
+          </property>
+         </widget>
+         <widget class="QLabel" name="lblCCFDDuration1">
+          <property name="geometry">
+           <rect>
+            <x>30</x>
+            <y>70</y>
+            <width>181</width>
+            <height>19</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>单次时长                           小时</string>
+          </property>
+         </widget>
+         <widget class="QLineEdit" name="editCCFDPeriod1">
+          <property name="geometry">
+           <rect>
+            <x>110</x>
+            <y>40</y>
+            <width>51</width>
+            <height>21</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>24</string>
+          </property>
+         </widget>
+         <widget class="QLabel" name="lblCCFDRepeat1">
+          <property name="geometry">
+           <rect>
+            <x>30</x>
+            <y>100</y>
+            <width>181</width>
+            <height>19</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>重复次数                           次</string>
+          </property>
+         </widget>
+         <widget class="QLabel" name="lblCCFDLevel1">
+          <property name="geometry">
+           <rect>
+            <x>30</x>
+            <y>130</y>
+            <width>31</width>
+            <height>19</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>档位</string>
+          </property>
+         </widget>
+         <widget class="QLineEdit" name="editCCFDDuration1">
+          <property name="geometry">
+           <rect>
+            <x>110</x>
+            <y>70</y>
+            <width>51</width>
+            <height>21</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>5</string>
+          </property>
+         </widget>
+         <widget class="QLabel" name="lblCCFDPeriod1">
+          <property name="geometry">
+           <rect>
+            <x>30</x>
+            <y>40</y>
+            <width>191</width>
+            <height>19</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>周期                                  小时</string>
+          </property>
+         </widget>
+         <widget class="QLabel" name="lblCCFDLevel2">
+          <property name="geometry">
+           <rect>
+            <x>30</x>
+            <y>300</y>
+            <width>31</width>
+            <height>19</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>档位</string>
+          </property>
+         </widget>
+         <widget class="QLineEdit" name="editCCFDRepeat2">
+          <property name="geometry">
+           <rect>
+            <x>110</x>
+            <y>270</y>
+            <width>51</width>
+            <height>21</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>10</string>
+          </property>
+         </widget>
+         <widget class="QLabel" name="lblCCFDDuration2">
+          <property name="geometry">
+           <rect>
+            <x>30</x>
+            <y>240</y>
+            <width>191</width>
+            <height>19</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>单次时长                           小时</string>
+          </property>
+         </widget>
+         <widget class="QLineEdit" name="editCCFDPeriod2">
+          <property name="geometry">
+           <rect>
+            <x>110</x>
+            <y>210</y>
+            <width>51</width>
+            <height>21</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>48</string>
+          </property>
+         </widget>
+         <widget class="QLabel" name="lblCCFDRepeat2">
+          <property name="geometry">
+           <rect>
+            <x>30</x>
+            <y>270</y>
+            <width>191</width>
+            <height>19</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>重复次数                           次</string>
+          </property>
+         </widget>
+         <widget class="QLineEdit" name="editCCFDDuration2">
+          <property name="geometry">
+           <rect>
+            <x>110</x>
+            <y>240</y>
+            <width>51</width>
+            <height>21</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>8</string>
+          </property>
+         </widget>
+         <widget class="QComboBox" name="cmbCCFDLevel2">
+          <property name="geometry">
+           <rect>
+            <x>110</x>
+            <y>300</y>
+            <width>71</width>
+            <height>25</height>
+           </rect>
+          </property>
+          <property name="currentIndex">
+           <number>2</number>
+          </property>
+          <item>
+           <property name="text">
+            <string>1档</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>2档</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>3档</string>
+           </property>
+          </item>
+         </widget>
+         <widget class="QLabel" name="lblCCFDPeriod2">
+          <property name="geometry">
+           <rect>
+            <x>30</x>
+            <y>210</y>
+            <width>191</width>
+            <height>19</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>周期                                  小时</string>
+          </property>
+         </widget>
+         <zorder>lblCCFDDuration2</zorder>
+         <zorder>lblCCFDPeriod2</zorder>
+         <zorder>lblCCFDRepeat1</zorder>
+         <zorder>lblCCFDPeriod1</zorder>
+         <zorder>lblCCFDRepeat2</zorder>
+         <zorder>lblCCFDName1</zorder>
+         <zorder>lblCCFDName2</zorder>
+         <zorder>cmbCCFDLevel1</zorder>
+         <zorder>editCCFDRepeat1</zorder>
+         <zorder>lblCCFDDuration1</zorder>
+         <zorder>editCCFDPeriod1</zorder>
+         <zorder>lblCCFDLevel1</zorder>
+         <zorder>editCCFDDuration1</zorder>
+         <zorder>lblCCFDLevel2</zorder>
+         <zorder>editCCFDRepeat2</zorder>
+         <zorder>editCCFDPeriod2</zorder>
+         <zorder>editCCFDDuration2</zorder>
+         <zorder>cmbCCFDLevel2</zorder>
+        </widget>
+       </widget>
+       <widget class="QPushButton" name="btnCCDeploy">
+        <property name="geometry">
+         <rect>
+          <x>530</x>
+          <y>590</y>
+          <width>93</width>
+          <height>28</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>部署</string>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="btnCCReset">
+        <property name="geometry">
+         <rect>
+          <x>630</x>
+          <y>590</y>
+          <width>93</width>
+          <height>28</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>重置</string>
+        </property>
+       </widget>
+      </widget>
+      <widget class="QWidget" name="autoCarePage">
+       <widget class="QLabel" name="lblACFan">
+        <property name="geometry">
+         <rect>
+          <x>490</x>
+          <y>10</y>
+          <width>69</width>
+          <height>19</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <pointsize>10</pointsize>
+         </font>
+        </property>
+        <property name="text">
+         <string>风扇</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="lblACIrrigation">
+        <property name="geometry">
+         <rect>
+          <x>10</x>
+          <y>10</y>
+          <width>69</width>
+          <height>19</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <pointsize>10</pointsize>
+         </font>
+        </property>
+        <property name="text">
+         <string>滴灌设备</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="lblACLighting">
+        <property name="geometry">
+         <rect>
+          <x>250</x>
+          <y>10</y>
+          <width>69</width>
+          <height>19</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <pointsize>10</pointsize>
+         </font>
+        </property>
+        <property name="text">
+         <string>补光设备</string>
+        </property>
+       </widget>
+       <widget class="QScrollArea" name="scrollACLighting">
+        <property name="geometry">
+         <rect>
+          <x>250</x>
+          <y>40</y>
+          <width>231</width>
+          <height>541</height>
+         </rect>
+        </property>
+        <property name="widgetResizable">
+         <bool>true</bool>
+        </property>
+        <widget class="QWidget" name="scrollAreaWidgetContents_9">
+         <property name="geometry">
+          <rect>
+           <x>0</x>
+           <y>0</y>
+           <width>229</width>
+           <height>539</height>
+          </rect>
+         </property>
+         <widget class="QLabel" name="lblACLDName1">
+          <property name="geometry">
+           <rect>
+            <x>10</x>
+            <y>10</y>
+            <width>101</width>
+            <height>19</height>
+           </rect>
+          </property>
+          <property name="font">
+           <font>
+            <bold>true</bold>
+           </font>
+          </property>
+          <property name="text">
+           <string>北阳台补光灯1</string>
+          </property>
+         </widget>
+         <widget class="QLabel" name="lblACLDName2">
+          <property name="geometry">
+           <rect>
+            <x>10</x>
+            <y>80</y>
+            <width>101</width>
+            <height>19</height>
+           </rect>
+          </property>
+          <property name="font">
+           <font>
+            <bold>true</bold>
+           </font>
+          </property>
+          <property name="text">
+           <string>北阳台补光灯2</string>
+          </property>
+         </widget>
+         <widget class="QLabel" name="lblACLDStatus2">
+          <property name="geometry">
+           <rect>
+            <x>10</x>
+            <y>100</y>
+            <width>51</width>
+            <height>19</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>运行中</string>
+          </property>
+         </widget>
+         <widget class="QLabel" name="lblACLDStatus1">
+          <property name="geometry">
+           <rect>
+            <x>10</x>
+            <y>30</y>
+            <width>51</width>
+            <height>21</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>已停机</string>
+          </property>
+         </widget>
+         <widget class="QPushButton" name="btnACLDStop1">
+          <property name="geometry">
+           <rect>
+            <x>170</x>
+            <y>10</y>
+            <width>51</width>
+            <height>28</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>停止</string>
+          </property>
+         </widget>
+         <widget class="QPushButton" name="btnACLDStart1">
+          <property name="geometry">
+           <rect>
+            <x>110</x>
+            <y>10</y>
+            <width>51</width>
+            <height>28</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>启动</string>
+          </property>
+         </widget>
+         <widget class="QPushButton" name="btnACLDStop2">
+          <property name="geometry">
+           <rect>
+            <x>170</x>
+            <y>80</y>
+            <width>51</width>
+            <height>28</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>停止</string>
+          </property>
+         </widget>
+         <widget class="QPushButton" name="btnACLDStart2">
+          <property name="geometry">
+           <rect>
+            <x>110</x>
+            <y>80</y>
+            <width>51</width>
+            <height>28</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>启动</string>
+          </property>
+         </widget>
+        </widget>
+       </widget>
+       <widget class="QScrollArea" name="scrollACIrrigation">
+        <property name="geometry">
+         <rect>
+          <x>10</x>
+          <y>40</y>
+          <width>231</width>
+          <height>541</height>
+         </rect>
+        </property>
+        <property name="widgetResizable">
+         <bool>true</bool>
+        </property>
+        <widget class="QWidget" name="scrollAreaWidgetContents_10">
+         <property name="geometry">
+          <rect>
+           <x>0</x>
+           <y>0</y>
+           <width>229</width>
+           <height>539</height>
+          </rect>
+         </property>
+         <widget class="QLabel" name="lblACIDName1">
+          <property name="geometry">
+           <rect>
+            <x>10</x>
+            <y>10</y>
+            <width>81</width>
+            <height>19</height>
+           </rect>
+          </property>
+          <property name="font">
+           <font>
+            <bold>true</bold>
+           </font>
+          </property>
+          <property name="text">
+           <string>北阳台滴灌</string>
+          </property>
+         </widget>
+         <widget class="QLabel" name="lblACIDName2">
+          <property name="geometry">
+           <rect>
+            <x>10</x>
+            <y>80</y>
+            <width>81</width>
+            <height>19</height>
+           </rect>
+          </property>
+          <property name="font">
+           <font>
+            <bold>true</bold>
+           </font>
+          </property>
+          <property name="text">
+           <string>南阳台滴灌</string>
+          </property>
+         </widget>
+         <widget class="QLabel" name="lblACIDName3">
+          <property name="geometry">
+           <rect>
+            <x>10</x>
+            <y>150</y>
+            <width>81</width>
+            <height>19</height>
+           </rect>
+          </property>
+          <property name="font">
+           <font>
+            <bold>true</bold>
+           </font>
+          </property>
+          <property name="text">
+           <string>客厅滴灌</string>
+          </property>
+         </widget>
+         <widget class="QLabel" name="lblACIDStatus1">
+          <property name="geometry">
+           <rect>
+            <x>10</x>
+            <y>30</y>
+            <width>51</width>
+            <height>19</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>运行中</string>
+          </property>
+         </widget>
+         <widget class="QLabel" name="lblACIDStatus2">
+          <property name="geometry">
+           <rect>
+            <x>10</x>
+            <y>100</y>
+            <width>51</width>
+            <height>19</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>已停机</string>
+          </property>
+         </widget>
+         <widget class="QLabel" name="lblACIDStatus3">
+          <property name="geometry">
+           <rect>
+            <x>10</x>
+            <y>170</y>
+            <width>51</width>
+            <height>21</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>已停机</string>
+          </property>
+         </widget>
+         <widget class="QPushButton" name="btnACIDStart1">
+          <property name="geometry">
+           <rect>
+            <x>110</x>
+            <y>10</y>
+            <width>51</width>
+            <height>28</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>启动</string>
+          </property>
+         </widget>
+         <widget class="QPushButton" name="btnACIDStop1">
+          <property name="geometry">
+           <rect>
+            <x>170</x>
+            <y>10</y>
+            <width>51</width>
+            <height>28</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>停止</string>
+          </property>
+         </widget>
+         <widget class="QPushButton" name="btnACIDStop2">
+          <property name="geometry">
+           <rect>
+            <x>170</x>
+            <y>80</y>
+            <width>51</width>
+            <height>28</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>停止</string>
+          </property>
+         </widget>
+         <widget class="QPushButton" name="btnACIDStart2">
+          <property name="geometry">
+           <rect>
+            <x>110</x>
+            <y>80</y>
+            <width>51</width>
+            <height>28</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>启动</string>
+          </property>
+         </widget>
+         <widget class="QPushButton" name="btnACIDStop3">
+          <property name="geometry">
+           <rect>
+            <x>170</x>
+            <y>150</y>
+            <width>51</width>
+            <height>28</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>停止</string>
+          </property>
+         </widget>
+         <widget class="QPushButton" name="btnACIDStart3">
+          <property name="geometry">
+           <rect>
+            <x>110</x>
+            <y>150</y>
+            <width>51</width>
+            <height>28</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>启动</string>
+          </property>
+         </widget>
+        </widget>
+       </widget>
+       <widget class="QScrollArea" name="scrollACFan">
+        <property name="geometry">
+         <rect>
+          <x>490</x>
+          <y>40</y>
+          <width>231</width>
+          <height>541</height>
+         </rect>
+        </property>
+        <property name="widgetResizable">
+         <bool>true</bool>
+        </property>
+        <widget class="QWidget" name="scrollAreaWidgetContents_8">
+         <property name="geometry">
+          <rect>
+           <x>0</x>
+           <y>0</y>
+           <width>229</width>
+           <height>539</height>
+          </rect>
+         </property>
+         <widget class="QLabel" name="lblACFDName1">
+          <property name="geometry">
+           <rect>
+            <x>10</x>
+            <y>10</y>
+            <width>81</width>
+            <height>19</height>
+           </rect>
+          </property>
+          <property name="font">
+           <font>
+            <bold>true</bold>
+           </font>
+          </property>
+          <property name="text">
+           <string>客厅风扇</string>
+          </property>
+         </widget>
+         <widget class="QLabel" name="lblACFDName2">
+          <property name="geometry">
+           <rect>
+            <x>10</x>
+            <y>80</y>
+            <width>81</width>
+            <height>19</height>
+           </rect>
+          </property>
+          <property name="font">
+           <font>
+            <bold>true</bold>
+           </font>
+          </property>
+          <property name="text">
+           <string>南阳台风扇</string>
+          </property>
+         </widget>
+         <widget class="QLabel" name="lblACFDStatus1">
+          <property name="geometry">
+           <rect>
+            <x>10</x>
+            <y>30</y>
+            <width>51</width>
+            <height>21</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>已停机</string>
+          </property>
+         </widget>
+         <widget class="QLabel" name="lblACFDStatus2">
+          <property name="geometry">
+           <rect>
+            <x>10</x>
+            <y>100</y>
+            <width>51</width>
+            <height>21</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>已停机</string>
+          </property>
+         </widget>
+         <widget class="QPushButton" name="btnACFDStop1">
+          <property name="geometry">
+           <rect>
+            <x>170</x>
+            <y>10</y>
+            <width>51</width>
+            <height>28</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>停止</string>
+          </property>
+         </widget>
+         <widget class="QPushButton" name="btnACFDStart1">
+          <property name="geometry">
+           <rect>
+            <x>110</x>
+            <y>10</y>
+            <width>51</width>
+            <height>28</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>启动</string>
+          </property>
+         </widget>
+         <widget class="QPushButton" name="btnACFDStop2">
+          <property name="geometry">
+           <rect>
+            <x>170</x>
+            <y>80</y>
+            <width>51</width>
+            <height>28</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>停止</string>
+          </property>
+         </widget>
+         <widget class="QPushButton" name="btnACFDStart2">
+          <property name="geometry">
+           <rect>
+            <x>110</x>
+            <y>80</y>
+            <width>51</width>
+            <height>28</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>启动</string>
+          </property>
+         </widget>
+        </widget>
+       </widget>
+      </widget>
+      <widget class="QWidget" name="manualCarePage">
+       <widget class="QLabel" name="lblMCFan">
+        <property name="geometry">
+         <rect>
+          <x>490</x>
+          <y>10</y>
+          <width>69</width>
+          <height>19</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <pointsize>10</pointsize>
+         </font>
+        </property>
+        <property name="text">
+         <string>风扇</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="lblMCLighting">
+        <property name="geometry">
+         <rect>
+          <x>250</x>
+          <y>10</y>
+          <width>69</width>
+          <height>19</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <pointsize>10</pointsize>
+         </font>
+        </property>
+        <property name="text">
+         <string>补光设备</string>
+        </property>
+       </widget>
+       <widget class="QScrollArea" name="scrollMCFan">
+        <property name="geometry">
+         <rect>
+          <x>490</x>
+          <y>40</y>
+          <width>231</width>
+          <height>541</height>
+         </rect>
+        </property>
+        <property name="widgetResizable">
+         <bool>true</bool>
+        </property>
+        <widget class="QWidget" name="scrollMCFanContents">
+         <property name="geometry">
+          <rect>
+           <x>0</x>
+           <y>0</y>
+           <width>229</width>
+           <height>539</height>
+          </rect>
+         </property>
+         <widget class="QLabel" name="lblMCFDName1">
+          <property name="geometry">
+           <rect>
+            <x>10</x>
+            <y>10</y>
+            <width>81</width>
+            <height>19</height>
+           </rect>
+          </property>
+          <property name="font">
+           <font>
+            <bold>true</bold>
+           </font>
+          </property>
+          <property name="text">
+           <string>客厅风扇</string>
+          </property>
+         </widget>
+         <widget class="QLabel" name="lblMCFDName2">
+          <property name="geometry">
+           <rect>
+            <x>10</x>
+            <y>140</y>
+            <width>81</width>
+            <height>19</height>
+           </rect>
+          </property>
+          <property name="font">
+           <font>
+            <bold>true</bold>
+           </font>
+          </property>
+          <property name="text">
+           <string>南阳台风扇</string>
+          </property>
+         </widget>
+         <widget class="QLabel" name="lblMCFDStatus1">
+          <property name="geometry">
+           <rect>
+            <x>10</x>
+            <y>30</y>
+            <width>51</width>
+            <height>21</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>已停机</string>
+          </property>
+         </widget>
+         <widget class="QLabel" name="lblMCFDStatus2">
+          <property name="geometry">
+           <rect>
+            <x>10</x>
+            <y>160</y>
+            <width>51</width>
+            <height>21</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>已停机</string>
+          </property>
+         </widget>
+         <widget class="QPushButton" name="btnMCFDStop1">
+          <property name="geometry">
+           <rect>
+            <x>170</x>
+            <y>90</y>
+            <width>51</width>
+            <height>28</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>停止</string>
+          </property>
+         </widget>
+         <widget class="QLabel" name="lblMCFDDuration1">
+          <property name="geometry">
+           <rect>
+            <x>10</x>
+            <y>60</y>
+            <width>211</width>
+            <height>19</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>设置开启时长：                       小时</string>
+          </property>
+         </widget>
+         <widget class="QPushButton" name="btnMCFDStart1">
+          <property name="geometry">
+           <rect>
+            <x>110</x>
+            <y>90</y>
+            <width>51</width>
+            <height>28</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>启动</string>
+          </property>
+         </widget>
+         <widget class="QLineEdit" name="editMCFDDuration1">
+          <property name="geometry">
+           <rect>
+            <x>110</x>
+            <y>60</y>
+            <width>61</width>
+            <height>25</height>
+           </rect>
+          </property>
+         </widget>
+         <widget class="QLabel" name="lblMCFDRemaining1">
+          <property name="geometry">
+           <rect>
+            <x>10</x>
+            <y>90</y>
+            <width>91</width>
+            <height>19</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>剩余时长：--</string>
+          </property>
+         </widget>
+         <widget class="QPushButton" name="btnMCFDStop2">
+          <property name="geometry">
+           <rect>
+            <x>170</x>
+            <y>220</y>
+            <width>51</width>
+            <height>28</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>停止</string>
+          </property>
+         </widget>
+         <widget class="QPushButton" name="btnMCFDStart2">
+          <property name="geometry">
+           <rect>
+            <x>110</x>
+            <y>220</y>
+            <width>51</width>
+            <height>28</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>启动</string>
+          </property>
+         </widget>
+         <widget class="QLabel" name="lblMCFDRemaining2">
+          <property name="geometry">
+           <rect>
+            <x>10</x>
+            <y>220</y>
+            <width>91</width>
+            <height>19</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>剩余时长：--</string>
+          </property>
+         </widget>
+         <widget class="QLineEdit" name="editMCFDDuration2">
+          <property name="geometry">
+           <rect>
+            <x>110</x>
+            <y>190</y>
+            <width>61</width>
+            <height>25</height>
+           </rect>
+          </property>
+         </widget>
+         <widget class="QLabel" name="lblMCFDDuration2">
+          <property name="geometry">
+           <rect>
+            <x>10</x>
+            <y>190</y>
+            <width>211</width>
+            <height>19</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>设置开启时长：                       小时</string>
+          </property>
+         </widget>
+         <zorder>lblMCFDDuration2</zorder>
+         <zorder>lblMCFDName1</zorder>
+         <zorder>lblMCFDName2</zorder>
+         <zorder>lblMCFDStatus1</zorder>
+         <zorder>lblMCFDStatus2</zorder>
+         <zorder>btnMCFDStop1</zorder>
+         <zorder>lblMCFDDuration1</zorder>
+         <zorder>btnMCFDStart1</zorder>
+         <zorder>editMCFDDuration1</zorder>
+         <zorder>lblMCFDRemaining1</zorder>
+         <zorder>btnMCFDStop2</zorder>
+         <zorder>btnMCFDStart2</zorder>
+         <zorder>lblMCFDRemaining2</zorder>
+         <zorder>editMCFDDuration2</zorder>
+        </widget>
+       </widget>
+       <widget class="QLabel" name="lblMCIrrigation">
+        <property name="geometry">
+         <rect>
+          <x>10</x>
+          <y>10</y>
+          <width>69</width>
+          <height>19</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <pointsize>10</pointsize>
+         </font>
+        </property>
+        <property name="text">
+         <string>滴灌设备</string>
+        </property>
+       </widget>
+       <widget class="QScrollArea" name="scrollMCIrrigation">
+        <property name="geometry">
+         <rect>
+          <x>10</x>
+          <y>40</y>
+          <width>231</width>
+          <height>541</height>
+         </rect>
+        </property>
+        <property name="widgetResizable">
+         <bool>true</bool>
+        </property>
+        <widget class="QWidget" name="scrollMCIrrigationContents">
+         <property name="geometry">
+          <rect>
+           <x>0</x>
+           <y>0</y>
+           <width>229</width>
+           <height>539</height>
+          </rect>
+         </property>
+         <widget class="QLabel" name="lblMCIDName1">
+          <property name="geometry">
+           <rect>
+            <x>10</x>
+            <y>10</y>
+            <width>81</width>
+            <height>19</height>
+           </rect>
+          </property>
+          <property name="font">
+           <font>
+            <bold>true</bold>
+           </font>
+          </property>
+          <property name="text">
+           <string>北阳台滴灌</string>
+          </property>
+         </widget>
+         <widget class="QLabel" name="lblMCIDName2">
+          <property name="geometry">
+           <rect>
+            <x>10</x>
+            <y>140</y>
+            <width>81</width>
+            <height>19</height>
+           </rect>
+          </property>
+          <property name="font">
+           <font>
+            <bold>true</bold>
+           </font>
+          </property>
+          <property name="text">
+           <string>南阳台滴灌</string>
+          </property>
+         </widget>
+         <widget class="QLabel" name="lblMCIDName3">
+          <property name="geometry">
+           <rect>
+            <x>10</x>
+            <y>270</y>
+            <width>81</width>
+            <height>19</height>
+           </rect>
+          </property>
+          <property name="font">
+           <font>
+            <bold>true</bold>
+           </font>
+          </property>
+          <property name="text">
+           <string>客厅滴灌</string>
+          </property>
+         </widget>
+         <widget class="QLabel" name="lblMCIDStatus1">
+          <property name="geometry">
+           <rect>
+            <x>10</x>
+            <y>30</y>
+            <width>51</width>
+            <height>19</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>运行中</string>
+          </property>
+         </widget>
+         <widget class="QLabel" name="lblMCIDStatus2">
+          <property name="geometry">
+           <rect>
+            <x>10</x>
+            <y>160</y>
+            <width>51</width>
+            <height>19</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>已停机</string>
+          </property>
+         </widget>
+         <widget class="QLabel" name="lblMCIDStatus3">
+          <property name="geometry">
+           <rect>
+            <x>10</x>
+            <y>290</y>
+            <width>51</width>
+            <height>21</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>已停机</string>
+          </property>
+         </widget>
+         <widget class="QPushButton" name="btnMCIDStart1">
+          <property name="geometry">
+           <rect>
+            <x>110</x>
+            <y>90</y>
+            <width>51</width>
+            <height>28</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>启动</string>
+          </property>
+         </widget>
+         <widget class="QPushButton" name="btnMCIDStop1">
+          <property name="geometry">
+           <rect>
+            <x>170</x>
+            <y>90</y>
+            <width>51</width>
+            <height>28</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>停止</string>
+          </property>
+         </widget>
+         <widget class="QLabel" name="lblMCIDRemaining1">
+          <property name="geometry">
+           <rect>
+            <x>10</x>
+            <y>90</y>
+            <width>91</width>
+            <height>19</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>剩余时长：--</string>
+          </property>
+         </widget>
+         <widget class="QPushButton" name="btnMCIDStop2">
+          <property name="geometry">
+           <rect>
+            <x>170</x>
+            <y>220</y>
+            <width>51</width>
+            <height>28</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>停止</string>
+          </property>
+         </widget>
+         <widget class="QPushButton" name="btnMCIDStart2">
+          <property name="geometry">
+           <rect>
+            <x>110</x>
+            <y>220</y>
+            <width>51</width>
+            <height>28</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>启动</string>
+          </property>
+         </widget>
+         <widget class="QPushButton" name="btnMCIDStop3">
+          <property name="geometry">
+           <rect>
+            <x>170</x>
+            <y>350</y>
+            <width>51</width>
+            <height>28</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>停止</string>
+          </property>
+         </widget>
+         <widget class="QPushButton" name="btnMCIDStart3">
+          <property name="geometry">
+           <rect>
+            <x>110</x>
+            <y>350</y>
+            <width>51</width>
+            <height>28</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>启动</string>
+          </property>
+         </widget>
+         <widget class="QLabel" name="lblMCIDDuration1">
+          <property name="geometry">
+           <rect>
+            <x>10</x>
+            <y>60</y>
+            <width>211</width>
+            <height>19</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>设置开启时长：                       分钟</string>
+          </property>
+         </widget>
+         <widget class="QLineEdit" name="editMCIDDuration1">
+          <property name="geometry">
+           <rect>
+            <x>110</x>
+            <y>60</y>
+            <width>61</width>
+            <height>25</height>
+           </rect>
+          </property>
+         </widget>
+         <widget class="QLabel" name="lblMCIDRemaining2">
+          <property name="geometry">
+           <rect>
+            <x>10</x>
+            <y>220</y>
+            <width>91</width>
+            <height>19</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>剩余时长：--</string>
+          </property>
+         </widget>
+         <widget class="QLabel" name="lblMCIDDuration2">
+          <property name="geometry">
+           <rect>
+            <x>10</x>
+            <y>190</y>
+            <width>211</width>
+            <height>19</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>设置开启时长：                       分钟</string>
+          </property>
+         </widget>
+         <widget class="QLineEdit" name="editMCIDDuration2">
+          <property name="geometry">
+           <rect>
+            <x>110</x>
+            <y>190</y>
+            <width>61</width>
+            <height>25</height>
+           </rect>
+          </property>
+         </widget>
+         <widget class="QLabel" name="lblMCIDRemaining3">
+          <property name="geometry">
+           <rect>
+            <x>10</x>
+            <y>350</y>
+            <width>91</width>
+            <height>19</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>剩余时长：--</string>
+          </property>
+         </widget>
+         <widget class="QLabel" name="lblMCIDDuration3">
+          <property name="geometry">
+           <rect>
+            <x>10</x>
+            <y>320</y>
+            <width>211</width>
+            <height>19</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>设置开启时长：                       分钟</string>
+          </property>
+         </widget>
+         <widget class="QLineEdit" name="editMCIDDuration3">
+          <property name="geometry">
+           <rect>
+            <x>110</x>
+            <y>320</y>
+            <width>61</width>
+            <height>25</height>
+           </rect>
+          </property>
+         </widget>
+        </widget>
+       </widget>
+       <widget class="QScrollArea" name="scrollMCLighting">
+        <property name="geometry">
+         <rect>
+          <x>250</x>
+          <y>40</y>
+          <width>231</width>
+          <height>541</height>
+         </rect>
+        </property>
+        <property name="widgetResizable">
+         <bool>true</bool>
+        </property>
+        <widget class="QWidget" name="scrollMCLightingContents">
+         <property name="geometry">
+          <rect>
+           <x>0</x>
+           <y>0</y>
+           <width>229</width>
+           <height>539</height>
+          </rect>
+         </property>
+         <widget class="QLabel" name="lblMCLDName1">
+          <property name="geometry">
+           <rect>
+            <x>10</x>
+            <y>10</y>
+            <width>101</width>
+            <height>19</height>
+           </rect>
+          </property>
+          <property name="font">
+           <font>
+            <bold>true</bold>
+           </font>
+          </property>
+          <property name="text">
+           <string>北阳台补光灯1</string>
+          </property>
+         </widget>
+         <widget class="QLabel" name="lblMCLDName2">
+          <property name="geometry">
+           <rect>
+            <x>10</x>
+            <y>140</y>
+            <width>101</width>
+            <height>19</height>
+           </rect>
+          </property>
+          <property name="font">
+           <font>
+            <bold>true</bold>
+           </font>
+          </property>
+          <property name="text">
+           <string>北阳台补光灯2</string>
+          </property>
+         </widget>
+         <widget class="QLabel" name="lblMCLDStatus2">
+          <property name="geometry">
+           <rect>
+            <x>10</x>
+            <y>160</y>
+            <width>51</width>
+            <height>19</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>运行中</string>
+          </property>
+         </widget>
+         <widget class="QLabel" name="lblMCLDStatus1">
+          <property name="geometry">
+           <rect>
+            <x>10</x>
+            <y>30</y>
+            <width>51</width>
+            <height>21</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>已停机</string>
+          </property>
+         </widget>
+         <widget class="QPushButton" name="btnMCLDStop1">
+          <property name="geometry">
+           <rect>
+            <x>170</x>
+            <y>90</y>
+            <width>51</width>
+            <height>28</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>停止</string>
+          </property>
+         </widget>
+         <widget class="QLabel" name="lblMCLDRemaining1">
+          <property name="geometry">
+           <rect>
+            <x>10</x>
+            <y>90</y>
+            <width>91</width>
+            <height>19</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>剩余时长：--</string>
+          </property>
+         </widget>
+         <widget class="QLabel" name="lblMCLDDuration1">
+          <property name="geometry">
+           <rect>
+            <x>10</x>
+            <y>60</y>
+            <width>211</width>
+            <height>19</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>设置开启时长：                       小时</string>
+          </property>
+         </widget>
+         <widget class="QLineEdit" name="editMCLDDuration1">
+          <property name="geometry">
+           <rect>
+            <x>110</x>
+            <y>60</y>
+            <width>61</width>
+            <height>25</height>
+           </rect>
+          </property>
+         </widget>
+         <widget class="QPushButton" name="btnMCLDStart1">
+          <property name="geometry">
+           <rect>
+            <x>110</x>
+            <y>90</y>
+            <width>51</width>
+            <height>28</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>启动</string>
+          </property>
+         </widget>
+         <widget class="QPushButton" name="btnMCLDStop2">
+          <property name="geometry">
+           <rect>
+            <x>170</x>
+            <y>220</y>
+            <width>51</width>
+            <height>28</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>停止</string>
+          </property>
+         </widget>
+         <widget class="QLabel" name="lblMCLDDuration2">
+          <property name="geometry">
+           <rect>
+            <x>10</x>
+            <y>190</y>
+            <width>211</width>
+            <height>19</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>设置开启时长：                       小时</string>
+          </property>
+         </widget>
+         <widget class="QPushButton" name="btnMCLDStart2">
+          <property name="geometry">
+           <rect>
+            <x>110</x>
+            <y>220</y>
+            <width>51</width>
+            <height>28</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>启动</string>
+          </property>
+         </widget>
+         <widget class="QLineEdit" name="editMCLDDuration2">
+          <property name="geometry">
+           <rect>
+            <x>110</x>
+            <y>190</y>
+            <width>61</width>
+            <height>25</height>
+           </rect>
+          </property>
+         </widget>
+         <widget class="QLabel" name="lblMCLDRemaining2">
+          <property name="geometry">
+           <rect>
+            <x>10</x>
+            <y>220</y>
+            <width>91</width>
+            <height>19</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>剩余时长：--</string>
+          </property>
+         </widget>
+        </widget>
+       </widget>
+      </widget>
+     </widget>
+     <widget class="QWidget" name="deviceWidget" native="true">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>0</y>
+        <width>291</width>
+        <height>621</height>
+       </rect>
+      </property>
+      <widget class="QWidget" name="layoutWidget_2">
+       <property name="geometry">
+        <rect>
+         <x>0</x>
+         <y>20</y>
+         <width>291</width>
+         <height>130</height>
+        </rect>
+       </property>
+       <layout class="QVBoxLayout" name="verticalLayout_3">
+        <property name="spacing">
+         <number>0</number>
+        </property>
+        <property name="sizeConstraint">
+         <enum>QLayout::SizeConstraint::SetNoConstraint</enum>
+        </property>
+        <item>
+         <widget class="QPushButton" name="btnDeviceStatus">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Minimum" vsizetype="Maximum">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="font">
+           <font>
+            <pointsize>11</pointsize>
+           </font>
+          </property>
+          <property name="text">
+           <string>设备状态</string>
+          </property>
+          <property name="icon">
+           <iconset theme="QIcon::ThemeIcon::FolderOpen"/>
+          </property>
+          <property name="checkable">
+           <bool>true</bool>
+          </property>
+          <property name="checked">
+           <bool>true</bool>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="btnCareConfig">
+          <property name="font">
+           <font>
+            <pointsize>11</pointsize>
+           </font>
+          </property>
+          <property name="text">
+           <string>养护配置</string>
+          </property>
+          <property name="icon">
+           <iconset theme="QIcon::ThemeIcon::DocumentProperties"/>
+          </property>
+          <property name="checkable">
+           <bool>true</bool>
+          </property>
+          <property name="checked">
+           <bool>false</bool>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="btnAutoCare">
+          <property name="font">
+           <font>
+            <pointsize>11</pointsize>
+           </font>
+          </property>
+          <property name="text">
+           <string>自动养护</string>
+          </property>
+          <property name="icon">
+           <iconset theme="applications-development"/>
+          </property>
+          <property name="checkable">
+           <bool>true</bool>
+          </property>
+          <property name="checked">
+           <bool>false</bool>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="btnManualCare">
+          <property name="font">
+           <font>
+            <pointsize>11</pointsize>
+           </font>
+          </property>
+          <property name="text">
+           <string>手动养护</string>
+          </property>
+          <property name="icon">
+           <iconset theme="applications-development"/>
+          </property>
+          <property name="checkable">
+           <bool>true</bool>
+          </property>
+          <property name="checked">
+           <bool>false</bool>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="pageSystem">
+     <widget class="QWidget" name="systemWidget" native="true">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>0</y>
+        <width>291</width>
+        <height>621</height>
+       </rect>
+      </property>
+      <widget class="QWidget" name="layoutWidget">
+       <property name="geometry">
+        <rect>
+         <x>0</x>
+         <y>20</y>
+         <width>291</width>
+         <height>106</height>
+        </rect>
+       </property>
+       <layout class="QVBoxLayout" name="verticalLayout">
+        <property name="spacing">
+         <number>0</number>
+        </property>
+        <property name="sizeConstraint">
+         <enum>QLayout::SizeConstraint::SetNoConstraint</enum>
+        </property>
+        <item>
+         <widget class="QPushButton" name="btnSystemLog">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Minimum" vsizetype="Maximum">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="font">
+           <font>
+            <pointsize>11</pointsize>
+           </font>
+          </property>
+          <property name="text">
+           <string>系统日志</string>
+          </property>
+          <property name="icon">
+           <iconset theme="QIcon::ThemeIcon::DocumentPageSetup"/>
+          </property>
+          <property name="checkable">
+           <bool>true</bool>
+          </property>
+          <property name="checked">
+           <bool>true</bool>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="btnPlantLog">
+          <property name="font">
+           <font>
+            <pointsize>11</pointsize>
+           </font>
+          </property>
+          <property name="text">
+           <string>植物日志</string>
+          </property>
+          <property name="icon">
+           <iconset theme="QIcon::ThemeIcon::DocumentPageSetup"/>
+          </property>
+          <property name="checkable">
+           <bool>true</bool>
+          </property>
+          <property name="checked">
+           <bool>false</bool>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="btnSystemSettings">
+          <property name="font">
+           <font>
+            <pointsize>11</pointsize>
+           </font>
+          </property>
+          <property name="text">
+           <string>系统设置</string>
+          </property>
+          <property name="icon">
+           <iconset theme="applications-development"/>
+          </property>
+          <property name="checkable">
+           <bool>true</bool>
+          </property>
+          <property name="checked">
+           <bool>false</bool>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+     </widget>
+     <widget class="QStackedWidget" name="systemStack">
+      <property name="geometry">
+       <rect>
+        <x>290</x>
+        <y>0</y>
+        <width>751</width>
+        <height>621</height>
+       </rect>
+      </property>
+      <property name="currentIndex">
+       <number>2</number>
+      </property>
+      <widget class="QWidget" name="systemLogPage">
+       <widget class="QLabel" name="lblSystemLog">
+        <property name="geometry">
+         <rect>
+          <x>30</x>
+          <y>30</y>
+          <width>69</width>
+          <height>19</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>系统日志：</string>
+        </property>
+       </widget>
+       <widget class="QPlainTextEdit" name="txtSystemLog">
+        <property name="geometry">
+         <rect>
+          <x>30</x>
+          <y>60</y>
+          <width>661</width>
+          <height>471</height>
+         </rect>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="btnShowSystemLogFolder">
+        <property name="geometry">
+         <rect>
+          <x>560</x>
+          <y>550</y>
+          <width>131</width>
+          <height>28</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>在文件夹中显示</string>
+        </property>
+       </widget>
+      </widget>
+      <widget class="QWidget" name="plantLogPage">
+       <widget class="QPlainTextEdit" name="txtPlantLog">
+        <property name="geometry">
+         <rect>
+          <x>30</x>
+          <y>60</y>
+          <width>661</width>
+          <height>471</height>
+         </rect>
+        </property>
+       </widget>
+       <widget class="QLabel" name="lblPlantLog">
+        <property name="geometry">
+         <rect>
+          <x>30</x>
+          <y>30</y>
+          <width>69</width>
+          <height>19</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>植物日志：</string>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="btnShowPlantLogFolder">
+        <property name="geometry">
+         <rect>
+          <x>560</x>
+          <y>550</y>
+          <width>131</width>
+          <height>28</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>在文件夹中显示</string>
+        </property>
+       </widget>
+      </widget>
+      <widget class="QWidget" name="systemSettingsPage">
+       <widget class="QCheckBox" name="chkAutoStart">
+        <property name="geometry">
+         <rect>
+          <x>30</x>
+          <y>140</y>
+          <width>98</width>
+          <height>23</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>开机自启动</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="lblLogPath">
+        <property name="geometry">
+         <rect>
+          <x>30</x>
+          <y>200</y>
+          <width>111</width>
+          <height>19</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>日志保存地址：</string>
+        </property>
+       </widget>
+       <widget class="QLineEdit" name="editLogPath">
+        <property name="geometry">
+         <rect>
+          <x>130</x>
+          <y>200</y>
+          <width>441</width>
+          <height>25</height>
+         </rect>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="btnSSBrowseLogPath">
+        <property name="geometry">
+         <rect>
+          <x>580</x>
+          <y>200</y>
+          <width>93</width>
+          <height>28</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>浏览...</string>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="btnSSApply">
+        <property name="geometry">
+         <rect>
+          <x>530</x>
+          <y>420</y>
+          <width>93</width>
+          <height>28</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>应用</string>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="btnSSCancel">
+        <property name="geometry">
+         <rect>
+          <x>630</x>
+          <y>420</y>
+          <width>93</width>
+          <height>28</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>取消</string>
+        </property>
+       </widget>
+      </widget>
+     </widget>
+    </widget>
+   </widget>
+   <widget class="QWidget" name="layoutWidget">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>0</y>
+      <width>291</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <layout class="QHBoxLayout" name="horizontalLayout">
+     <property name="spacing">
+      <number>0</number>
+     </property>
+     <property name="sizeConstraint">
+      <enum>QLayout::SizeConstraint::SetMinimumSize</enum>
+     </property>
+     <item>
+      <widget class="QPushButton" name="btnHome">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="icon">
+        <iconset theme="QIcon::ThemeIcon::GoHome"/>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="btnPlant">
+       <property name="font">
+        <font>
+         <pointsize>12</pointsize>
+        </font>
+       </property>
+       <property name="text">
+        <string>植物管理</string>
+       </property>
+       <property name="checkable">
+        <bool>true</bool>
+       </property>
+       <property name="checked">
+        <bool>true</bool>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="btnDevice">
+       <property name="font">
+        <font>
+         <pointsize>12</pointsize>
+        </font>
+       </property>
+       <property name="text">
+        <string>设备管理</string>
+       </property>
+       <property name="checkable">
+        <bool>true</bool>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="btnSystem">
+       <property name="font">
+        <font>
+         <pointsize>12</pointsize>
+        </font>
+       </property>
+       <property name="text">
+        <string>系统管理</string>
+       </property>
+       <property name="checkable">
+        <bool>true</bool>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </widget>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>1100</width>
+     <height>25</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menu">
+    <property name="title">
+     <string>文件</string>
+    </property>
+    <addaction name="action"/>
+    <addaction name="action_2"/>
+   </widget>
+   <widget class="QMenu" name="menu_2">
+    <property name="title">
+     <string>帮助</string>
+    </property>
+   </widget>
+   <addaction name="menu"/>
+   <addaction name="menu_2"/>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+  <action name="action">
+   <property name="text">
+    <string>导入配置</string>
+   </property>
+  </action>
+  <action name="action_2">
+   <property name="text">
+    <string>导出日志</string>
+   </property>
+  </action>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
