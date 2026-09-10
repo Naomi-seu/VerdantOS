@@ -2,7 +2,7 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
-
+#include <QSerialPort>
 QT_BEGIN_NAMESPACE
 namespace Ui {
 class MainWindow;
@@ -43,5 +43,6 @@ private slots:
 private:
     Ui::MainWindow *ui;
     void initPlantTree();
+    QSerialPort *serialPort;
 };
 #endif // MAINWINDOW_H

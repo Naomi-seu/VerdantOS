@@ -51,7 +51,15 @@ MainWindow::MainWindow(QWidget *parent)
     ui->mainStack->setCurrentWidget(ui->pagePlant);
     ui->btnPlant->setChecked(true);
 
-
+    //串口设置
+    serialPort = new QSerialPort(this);
+    serialPort->setPortName("COM12");
+    serialPort->setBaudRate(QSerialPort::Baud9600);
+    serialPort->setDataBits(QSerialPort::Data8);
+    serialPort->setParity(QSerialPort::NoParity);
+    serialPort->setStopBits(QSerialPort::OneStop);
+    serialPort->setFlowControl(QSerialPort::NoFlowControl);
+    serialPort->open(QIODevice::ReadWrite);
 
     //设备管理：设备状态：新增设备功能弹窗
     connect(ui->btnAddDevice,&QPushButton::clicked,[this]()
@@ -88,7 +96,8 @@ MainWindow::MainWindow(QWidget *parent)
         QMessageBox::information(this,"取消系统设置","功能开发中");
     });
 
-    qDebug() << "window size:" << this->size();
+    //打开窗口时发送一个0xaa
+    serialPort->write(QByteArray(1, char(0xff)));
 
 }
 
