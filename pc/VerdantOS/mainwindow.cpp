@@ -10,8 +10,8 @@ MainWindow::MainWindow(QWidget *parent)
 {
     ui->setupUi(this);
     //固定窗口大小
-    this->setMaximumSize(1100,720);
-    this->setMinimumSize(1100,720);
+    this->setMaximumSize(1100,750);
+    this->setMinimumSize(1100,750);
     this->setWindowTitle("VerdantOS_v1.0 家庭植物管理系统");
 
 
@@ -88,6 +88,8 @@ MainWindow::MainWindow(QWidget *parent)
         QMessageBox::information(this,"取消系统设置","功能开发中");
     });
 
+    qDebug() << "window size:" << this->size();
+
 }
 
 MainWindow::~MainWindow()
@@ -102,49 +104,58 @@ void MainWindow::initPlantTree()
     ui->treePlants->clear();
 
     // 北阳台
-    QTreeWidgetItem *northBalcony = new QTreeWidgetItem(ui->treePlants);
-
+    QTreeWidgetItem *northBalcony =
+        new QTreeWidgetItem(ui->treePlants);
     northBalcony->setText(0, "北阳台");
-    QTreeWidgetItem *mnyt = new QTreeWidgetItem(northBalcony);
-    mnyt->setText(0,"迷你岩桐");
 
-    /*
-     *
-     *现在在这里报错：    new QTreeWidgetItem(northBalcony)->setText(0, "迷你岩桐");
-expression cannot be followed by a postfix'->' operator; add parentheses(fix avalible)
+    QTreeWidgetItem *miniGloxinia =
+        new QTreeWidgetItem(northBalcony);
+    miniGloxinia->setText(0, "迷你岩桐");
 
-现在在这里报错：    new QTreeWidgetItem(northBalcony)->setText(0, "迷你岩桐");
-expression cannot be followed by a postfix'->' operator; add parentheses(fix avalible)
-根据我的分析应该是不能创建这个节点的同时给它用setText来进行取名。改成这样了就可以运行并且没问题了：northBalcony->setText(0, "北阳台");
-    QTreeWidgetItem *mnyt = new QTreeWidgetItem(northBalcony);
-    mnyt->setText(0,"迷你岩桐");
-但是这样的变量名太丑陋了，请你帮我重新起变量名，并且重新写好这部分所有花的节点的代码
-     * new QTreeWidgetItem(northBalcony)->setText(0, "迷你岩桐");
-    new QTreeWidgetItem(northBalcony)->setText(0, "海豚花");
-    new QTreeWidgetItem(northBalcony)->setText(0, "大岩桐");
+    QTreeWidgetItem *dolphinFlower =
+        new QTreeWidgetItem(northBalcony);
+    dolphinFlower->setText(0, "海豚花");
+
+    QTreeWidgetItem *gloxinia =
+        new QTreeWidgetItem(northBalcony);
+    gloxinia->setText(0, "大岩桐");
 
 
     // 南阳台
-    QTreeWidgetItem *southBalcony =        new QTreeWidgetItem(ui->treePlants);
-
+    QTreeWidgetItem *southBalcony =
+        new QTreeWidgetItem(ui->treePlants);
     southBalcony->setText(0, "南阳台");
 
-    new QTreeWidgetItem(southBalcony)->setText(0, "波斯菊");
-    new QTreeWidgetItem(southBalcony)->setText(0, "剑兰");
-    new QTreeWidgetItem(southBalcony)->setText(0, "柠檬树");
+    QTreeWidgetItem *cosmos =
+        new QTreeWidgetItem(southBalcony);
+    cosmos->setText(0, "波斯菊");
+
+    QTreeWidgetItem *gladiolus =
+        new QTreeWidgetItem(southBalcony);
+    gladiolus->setText(0, "剑兰");
+
+    QTreeWidgetItem *lemonTree =
+        new QTreeWidgetItem(southBalcony);
+    lemonTree->setText(0, "柠檬树");
 
 
     // 客厅
     QTreeWidgetItem *livingRoom =
         new QTreeWidgetItem(ui->treePlants);
-
     livingRoom->setText(0, "客厅");
 
-    new QTreeWidgetItem(livingRoom)->setText(0, "柠檬蔓绿绒");
-    new QTreeWidgetItem(livingRoom)->setText(0, "花叶绿萝");*/
+    QTreeWidgetItem *lemonPhilodendron =
+        new QTreeWidgetItem(livingRoom);
+    lemonPhilodendron->setText(0, "柠檬蔓绿绒");
 
-    // 默认展开
+    QTreeWidgetItem *variegatedPothos =
+        new QTreeWidgetItem(livingRoom);
+    variegatedPothos->setText(0, "花叶绿萝");
+
+
+    // 展开所有节点
     ui->treePlants->expandAll();
+
 }
 //切换到植物管理主视图
 void MainWindow::on_btnPlant_clicked()

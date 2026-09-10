@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>1100</width>
-    <height>721</height>
+    <height>750</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -51,8 +51,8 @@
      <rect>
       <x>0</x>
       <y>50</y>
-      <width>1031</width>
-      <height>651</height>
+      <width>1091</width>
+      <height>621</height>
      </rect>
     </property>
     <property name="currentIndex">
@@ -97,7 +97,7 @@
        </widget>
       </widget>
      </widget>
-     <widget class="QWidget" name="plants" native="true">
+     <widget class="QWidget" name="widgetPlantsInfo" native="true">
       <property name="geometry">
        <rect>
         <x>290</x>
@@ -106,6 +106,662 @@
         <height>621</height>
        </rect>
       </property>
+      <widget class="QFrame" name="frameBasicInfo">
+       <property name="geometry">
+        <rect>
+         <x>0</x>
+         <y>0</y>
+         <width>511</width>
+         <height>451</height>
+        </rect>
+       </property>
+       <property name="frameShape">
+        <enum>QFrame::Shape::Box</enum>
+       </property>
+       <property name="frameShadow">
+        <enum>QFrame::Shadow::Sunken</enum>
+       </property>
+       <property name="lineWidth">
+        <number>1</number>
+       </property>
+       <widget class="QLabel" name="label_12">
+        <property name="geometry">
+         <rect>
+          <x>270</x>
+          <y>150</y>
+          <width>69</width>
+          <height>19</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>颜色：</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="lblPlantIDTitle">
+        <property name="geometry">
+         <rect>
+          <x>30</x>
+          <y>100</y>
+          <width>69</width>
+          <height>19</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>ID：</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="label_6">
+        <property name="geometry">
+         <rect>
+          <x>270</x>
+          <y>100</y>
+          <width>69</width>
+          <height>19</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>种类：</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="label_5">
+        <property name="geometry">
+         <rect>
+          <x>30</x>
+          <y>150</y>
+          <width>69</width>
+          <height>19</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>品种：</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="lblPlantNameTitle">
+        <property name="geometry">
+         <rect>
+          <x>30</x>
+          <y>50</y>
+          <width>69</width>
+          <height>19</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>名称：</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="lblPlantAliasTitle">
+        <property name="geometry">
+         <rect>
+          <x>270</x>
+          <y>50</y>
+          <width>69</width>
+          <height>19</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>别名：</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="label_13">
+        <property name="geometry">
+         <rect>
+          <x>30</x>
+          <y>200</y>
+          <width>69</width>
+          <height>19</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>植物日记：</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="label_14">
+        <property name="geometry">
+         <rect>
+          <x>30</x>
+          <y>310</y>
+          <width>69</width>
+          <height>19</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>养护日志：</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="lblBasicInfo">
+        <property name="geometry">
+         <rect>
+          <x>10</x>
+          <y>10</y>
+          <width>69</width>
+          <height>19</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <pointsize>10</pointsize>
+          <bold>true</bold>
+         </font>
+        </property>
+        <property name="text">
+         <string>基础信息</string>
+        </property>
+       </widget>
+       <widget class="QPlainTextEdit" name="plainTextEdit_2">
+        <property name="geometry">
+         <rect>
+          <x>30</x>
+          <y>220</y>
+          <width>471</width>
+          <height>81</height>
+         </rect>
+        </property>
+       </widget>
+       <widget class="QPlainTextEdit" name="plainTextEdit_3">
+        <property name="geometry">
+         <rect>
+          <x>30</x>
+          <y>330</y>
+          <width>471</width>
+          <height>91</height>
+         </rect>
+        </property>
+       </widget>
+       <widget class="QComboBox" name="comboBox">
+        <property name="geometry">
+         <rect>
+          <x>320</x>
+          <y>100</y>
+          <width>121</width>
+          <height>25</height>
+         </rect>
+        </property>
+        <item>
+         <property name="text">
+          <string>请选择种类...</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>草花</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>球根</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>多肉</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>水培</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>热植</string>
+         </property>
+        </item>
+       </widget>
+       <widget class="QLabel" name="lblPlantName">
+        <property name="geometry">
+         <rect>
+          <x>80</x>
+          <y>50</y>
+          <width>151</width>
+          <height>19</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>TextLabel</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="lblPlantID">
+        <property name="geometry">
+         <rect>
+          <x>80</x>
+          <y>100</y>
+          <width>151</width>
+          <height>19</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>TextLabel</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="label_28">
+        <property name="geometry">
+         <rect>
+          <x>80</x>
+          <y>150</y>
+          <width>151</width>
+          <height>19</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>TextLabel</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="lblPlantAlias">
+        <property name="geometry">
+         <rect>
+          <x>320</x>
+          <y>50</y>
+          <width>151</width>
+          <height>19</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>TextLabel</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="label_30">
+        <property name="geometry">
+         <rect>
+          <x>320</x>
+          <y>150</y>
+          <width>151</width>
+          <height>19</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>TextLabel</string>
+        </property>
+       </widget>
+      </widget>
+      <widget class="QFrame" name="frameReasoning">
+       <property name="geometry">
+        <rect>
+         <x>520</x>
+         <y>0</y>
+         <width>292</width>
+         <height>621</height>
+        </rect>
+       </property>
+       <property name="frameShape">
+        <enum>QFrame::Shape::Box</enum>
+       </property>
+       <property name="frameShadow">
+        <enum>QFrame::Shadow::Sunken</enum>
+       </property>
+       <widget class="QLabel" name="label_16">
+        <property name="geometry">
+         <rect>
+          <x>10</x>
+          <y>10</y>
+          <width>69</width>
+          <height>19</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <pointsize>10</pointsize>
+          <bold>true</bold>
+         </font>
+        </property>
+        <property name="text">
+         <string>问题推理</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="label_22">
+        <property name="geometry">
+         <rect>
+          <x>30</x>
+          <y>50</y>
+          <width>69</width>
+          <height>19</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>症状1：</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="label_23">
+        <property name="geometry">
+         <rect>
+          <x>30</x>
+          <y>100</y>
+          <width>69</width>
+          <height>19</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>症状2：</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="label_24">
+        <property name="geometry">
+         <rect>
+          <x>30</x>
+          <y>150</y>
+          <width>69</width>
+          <height>19</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>症状3：</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="label_25">
+        <property name="geometry">
+         <rect>
+          <x>20</x>
+          <y>310</y>
+          <width>69</width>
+          <height>19</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>推理结果：</string>
+        </property>
+       </widget>
+       <widget class="QPlainTextEdit" name="plainTextEdit">
+        <property name="geometry">
+         <rect>
+          <x>20</x>
+          <y>330</y>
+          <width>251</width>
+          <height>271</height>
+         </rect>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="pushButton">
+        <property name="geometry">
+         <rect>
+          <x>170</x>
+          <y>230</y>
+          <width>93</width>
+          <height>28</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>开始推理</string>
+        </property>
+       </widget>
+       <widget class="QComboBox" name="comboBox_2">
+        <property name="geometry">
+         <rect>
+          <x>90</x>
+          <y>50</y>
+          <width>151</width>
+          <height>25</height>
+         </rect>
+        </property>
+        <item>
+         <property name="text">
+          <string>请选择叶子症状...</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>叶子发蔫</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>叶子发黄</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>叶子焦边</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>叶子有虫洞</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>叶子有白点</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>叶子有白线</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>叶子无症状</string>
+         </property>
+        </item>
+       </widget>
+       <widget class="QComboBox" name="comboBox_3">
+        <property name="geometry">
+         <rect>
+          <x>90</x>
+          <y>100</y>
+          <width>151</width>
+          <height>25</height>
+         </rect>
+        </property>
+        <item>
+         <property name="text">
+          <string>请选择整体症状...</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>杆子发黑</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>杆子发黄</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>落叶多</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>花朵消苞</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>花苞发黑</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>植株整体发蔫</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>植株覆网</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>整体无症状</string>
+         </property>
+        </item>
+       </widget>
+       <widget class="QComboBox" name="comboBox_4">
+        <property name="geometry">
+         <rect>
+          <x>90</x>
+          <y>150</y>
+          <width>151</width>
+          <height>25</height>
+         </rect>
+        </property>
+        <item>
+         <property name="text">
+          <string>选择其它症状...</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>盆土沉</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>盆土轻</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>土表有虫</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>其它无症状</string>
+         </property>
+        </item>
+       </widget>
+      </widget>
+      <widget class="QFrame" name="frameEnviromentInfo">
+       <property name="geometry">
+        <rect>
+         <x>0</x>
+         <y>460</y>
+         <width>511</width>
+         <height>161</height>
+        </rect>
+       </property>
+       <property name="frameShape">
+        <enum>QFrame::Shape::Box</enum>
+       </property>
+       <property name="frameShadow">
+        <enum>QFrame::Shadow::Sunken</enum>
+       </property>
+       <widget class="QLabel" name="label_17">
+        <property name="geometry">
+         <rect>
+          <x>10</x>
+          <y>20</y>
+          <width>69</width>
+          <height>19</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <pointsize>10</pointsize>
+          <bold>true</bold>
+         </font>
+        </property>
+        <property name="text">
+         <string>环境信息</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="label_18">
+        <property name="geometry">
+         <rect>
+          <x>30</x>
+          <y>90</y>
+          <width>69</width>
+          <height>19</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>空气湿度：</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="label_19">
+        <property name="geometry">
+         <rect>
+          <x>30</x>
+          <y>50</y>
+          <width>69</width>
+          <height>19</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>空气温度：</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="label_20">
+        <property name="geometry">
+         <rect>
+          <x>270</x>
+          <y>90</y>
+          <width>69</width>
+          <height>19</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>土壤湿度：</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="label_21">
+        <property name="geometry">
+         <rect>
+          <x>270</x>
+          <y>50</y>
+          <width>69</width>
+          <height>19</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>光照强度：</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="label_31">
+        <property name="geometry">
+         <rect>
+          <x>110</x>
+          <y>50</y>
+          <width>151</width>
+          <height>19</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>TextLabel</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="label_32">
+        <property name="geometry">
+         <rect>
+          <x>110</x>
+          <y>90</y>
+          <width>151</width>
+          <height>19</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>TextLabel</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="label_33">
+        <property name="geometry">
+         <rect>
+          <x>350</x>
+          <y>50</y>
+          <width>151</width>
+          <height>19</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>TextLabel</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="label_34">
+        <property name="geometry">
+         <rect>
+          <x>350</x>
+          <y>90</y>
+          <width>151</width>
+          <height>19</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>TextLabel</string>
+        </property>
+       </widget>
+      </widget>
      </widget>
     </widget>
     <widget class="QWidget" name="pageDevice">
@@ -119,7 +775,7 @@
        </rect>
       </property>
       <property name="currentIndex">
-       <number>3</number>
+       <number>1</number>
       </property>
       <widget class="QWidget" name="deviceStatusPage">
        <widget class="QLabel" name="lblDSIrrigation">
@@ -2961,7 +3617,7 @@
         <x>0</x>
         <y>0</y>
         <width>291</width>
-        <height>621</height>
+        <height>581</height>
        </rect>
       </property>
       <widget class="QWidget" name="layoutWidget_2">
@@ -3421,6 +4077,19 @@
       </widget>
      </item>
     </layout>
+   </widget>
+   <widget class="QLabel" name="label">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>680</y>
+      <width>1091</width>
+      <height>19</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>      系统已运行：--d--h--min                                                                                                                                     传感器：正常            滴灌：正常            补光：正常            风扇：正常</string>
+    </property>
    </widget>
   </widget>
   <widget class="QMenuBar" name="menubar">
