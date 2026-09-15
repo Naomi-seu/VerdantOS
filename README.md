@@ -74,23 +74,6 @@ Device Control Task
 * 设备控制任务
 * GPIO 输出
 
-当前下位机的核心数据流：
-
-```text
-UART RX
-  ↓
-UART Interrupt
-  ↓
-HAL_UART_RxCpltCallback()
-  ↓
-Message Queue
-  ↓
-Device Control Task
-  ↓
-GPIO
-```
-
-将**中断中的数据接收**与**实际设备控制逻辑**分离，使控制逻辑运行在 FreeRTOS 任务中，为后续接入更多设备和控制任务留下扩展空间。
 
 ## 通信设计
 
