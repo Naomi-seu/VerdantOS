@@ -56,7 +56,7 @@
      </rect>
     </property>
     <property name="currentIndex">
-     <number>0</number>
+     <number>1</number>
     </property>
     <widget class="QWidget" name="pagePlant">
      <widget class="QScrollArea" name="scrollPlantsMenu">
@@ -775,7 +775,7 @@
        </rect>
       </property>
       <property name="currentIndex">
-       <number>1</number>
+       <number>3</number>
       </property>
       <widget class="QWidget" name="deviceStatusPage">
        <widget class="QLabel" name="lblDSIrrigation">

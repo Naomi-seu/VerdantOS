@@ -54,7 +54,7 @@ MainWindow::MainWindow(QWidget *parent)
     //串口设置
     serialPort = new QSerialPort(this);
     serialPort->setPortName("COM12");
-    serialPort->setBaudRate(QSerialPort::Baud9600);
+    serialPort->setBaudRate(QSerialPort::Baud115200);
     serialPort->setDataBits(QSerialPort::Data8);
     serialPort->setParity(QSerialPort::NoParity);
     serialPort->setStopBits(QSerialPort::OneStop);
@@ -97,7 +97,7 @@ MainWindow::MainWindow(QWidget *parent)
     });
 
     //打开窗口时发送一个0xaa
-    serialPort->write(QByteArray(1, char(0xff)));
+    //serialPort->write(QByteArray(1, char(0xff)));
 
 }
 
@@ -237,5 +237,19 @@ void MainWindow::on_btnManualCare_clicked()
 void MainWindow::on_btnCCDeploy_clicked()
 {
 
+}
+
+//设备管理：手动养护：开启设备1
+void MainWindow::on_btnMCIDStart1_clicked()
+{
+    qDebug() << "Start button clicked";
+    serialPort->write(QByteArray(1, char(0x01)));
+}
+
+
+void MainWindow::on_btnMCIDStop1_clicked()
+{
+    qDebug() << "Stop button clicked";
+    serialPort->write(QByteArray(1, char(0x02)));
 }
 

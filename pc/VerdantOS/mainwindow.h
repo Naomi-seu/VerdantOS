@@ -40,6 +40,10 @@ private slots:
 
     void on_btnManualCare_clicked();
 
+    void on_btnMCIDStart1_clicked();
+
+    void on_btnMCIDStop1_clicked();
+
 private:
     Ui::MainWindow *ui;
     void initPlantTree();
