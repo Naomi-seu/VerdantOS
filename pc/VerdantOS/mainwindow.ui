@@ -56,7 +56,7 @@
      </rect>
     </property>
     <property name="currentIndex">
-     <number>1</number>
+     <number>0</number>
     </property>
     <widget class="QWidget" name="pagePlant">
      <widget class="QScrollArea" name="scrollPlantsMenu">
@@ -124,7 +124,7 @@
        <property name="lineWidth">
         <number>1</number>
        </property>
-       <widget class="QLabel" name="label_12">
+       <widget class="QLabel" name="lblPlantColorTitle">
         <property name="geometry">
          <rect>
           <x>270</x>
@@ -150,7 +150,7 @@
          <string>ID：</string>
         </property>
        </widget>
-       <widget class="QLabel" name="label_6">
+       <widget class="QLabel" name="lblPlantTypeTitle">
         <property name="geometry">
          <rect>
           <x>270</x>
@@ -163,7 +163,7 @@
          <string>种类：</string>
         </property>
        </widget>
-       <widget class="QLabel" name="label_5">
+       <widget class="QLabel" name="lblPlantVarietyTitle">
         <property name="geometry">
          <rect>
           <x>30</x>
@@ -202,7 +202,7 @@
          <string>别名：</string>
         </property>
        </widget>
-       <widget class="QLabel" name="label_13">
+       <widget class="QLabel" name="lblPlantDiaryTitle">
         <property name="geometry">
          <rect>
           <x>30</x>
@@ -215,7 +215,7 @@
          <string>植物日记：</string>
         </property>
        </widget>
-       <widget class="QLabel" name="label_14">
+       <widget class="QLabel" name="lblCareLogTitle">
         <property name="geometry">
          <rect>
           <x>30</x>
@@ -247,7 +247,7 @@
          <string>基础信息</string>
         </property>
        </widget>
-       <widget class="QPlainTextEdit" name="plainTextEdit_2">
+       <widget class="QPlainTextEdit" name="txtPlantDiary">
         <property name="geometry">
          <rect>
           <x>30</x>
@@ -257,7 +257,7 @@
          </rect>
         </property>
        </widget>
-       <widget class="QPlainTextEdit" name="plainTextEdit_3">
+       <widget class="QPlainTextEdit" name="txtCareLog">
         <property name="geometry">
          <rect>
           <x>30</x>
@@ -267,7 +267,7 @@
          </rect>
         </property>
        </widget>
-       <widget class="QComboBox" name="comboBox">
+       <widget class="QComboBox" name="cmbPlantType">
         <property name="geometry">
          <rect>
           <x>320</x>
@@ -317,7 +317,7 @@
          </rect>
         </property>
         <property name="text">
-         <string>TextLabel</string>
+         <string> </string>
         </property>
        </widget>
        <widget class="QLabel" name="lblPlantID">
@@ -330,10 +330,10 @@
          </rect>
         </property>
         <property name="text">
-         <string>TextLabel</string>
+         <string> </string>
         </property>
        </widget>
-       <widget class="QLabel" name="label_28">
+       <widget class="QLabel" name="lblPlantVariety">
         <property name="geometry">
          <rect>
           <x>80</x>
@@ -343,7 +343,7 @@
          </rect>
         </property>
         <property name="text">
-         <string>TextLabel</string>
+         <string> </string>
         </property>
        </widget>
        <widget class="QLabel" name="lblPlantAlias">
@@ -356,10 +356,10 @@
          </rect>
         </property>
         <property name="text">
-         <string>TextLabel</string>
+         <string> </string>
         </property>
        </widget>
-       <widget class="QLabel" name="label_30">
+       <widget class="QLabel" name="lblPlantColor">
         <property name="geometry">
          <rect>
           <x>320</x>
@@ -369,11 +369,11 @@
          </rect>
         </property>
         <property name="text">
-         <string>TextLabel</string>
+         <string> </string>
         </property>
        </widget>
       </widget>
-      <widget class="QFrame" name="frameReasoning">
+      <widget class="QFrame" name="framePlantProblemInference">
        <property name="geometry">
         <rect>
          <x>520</x>
@@ -388,7 +388,7 @@
        <property name="frameShadow">
         <enum>QFrame::Shadow::Sunken</enum>
        </property>
-       <widget class="QLabel" name="label_16">
+       <widget class="QLabel" name="lblPlantProblemInference">
         <property name="geometry">
          <rect>
           <x>10</x>
@@ -407,7 +407,7 @@
          <string>问题推理</string>
         </property>
        </widget>
-       <widget class="QLabel" name="label_22">
+       <widget class="QLabel" name="lblSymptom1Title">
         <property name="geometry">
          <rect>
           <x>30</x>
@@ -420,7 +420,7 @@
          <string>症状1：</string>
         </property>
        </widget>
-       <widget class="QLabel" name="label_23">
+       <widget class="QLabel" name="lblSymptom2Title">
         <property name="geometry">
          <rect>
           <x>30</x>
@@ -433,7 +433,7 @@
          <string>症状2：</string>
         </property>
        </widget>
-       <widget class="QLabel" name="label_24">
+       <widget class="QLabel" name="lblSymptom3Title">
         <property name="geometry">
          <rect>
           <x>30</x>
@@ -446,7 +446,7 @@
          <string>症状3：</string>
         </property>
        </widget>
-       <widget class="QLabel" name="label_25">
+       <widget class="QLabel" name="lblInferenceResultTitle">
         <property name="geometry">
          <rect>
           <x>20</x>
@@ -459,7 +459,7 @@
          <string>推理结果：</string>
         </property>
        </widget>
-       <widget class="QPlainTextEdit" name="plainTextEdit">
+       <widget class="QPlainTextEdit" name="txtInferenceResult">
         <property name="geometry">
          <rect>
           <x>20</x>
@@ -469,7 +469,7 @@
          </rect>
         </property>
        </widget>
-       <widget class="QPushButton" name="pushButton">
+       <widget class="QPushButton" name="btnStartInference">
         <property name="geometry">
          <rect>
           <x>170</x>
@@ -482,7 +482,7 @@
          <string>开始推理</string>
         </property>
        </widget>
-       <widget class="QComboBox" name="comboBox_2">
+       <widget class="QComboBox" name="cmbSymptom1">
         <property name="geometry">
          <rect>
           <x>90</x>
@@ -532,7 +532,7 @@
          </property>
         </item>
        </widget>
-       <widget class="QComboBox" name="comboBox_3">
+       <widget class="QComboBox" name="cmbSymptom2">
         <property name="geometry">
          <rect>
           <x>90</x>
@@ -587,7 +587,7 @@
          </property>
         </item>
        </widget>
-       <widget class="QComboBox" name="comboBox_4">
+       <widget class="QComboBox" name="cmbSymptom3">
         <property name="geometry">
          <rect>
           <x>90</x>
@@ -638,7 +638,7 @@
        <property name="frameShadow">
         <enum>QFrame::Shadow::Sunken</enum>
        </property>
-       <widget class="QLabel" name="label_17">
+       <widget class="QLabel" name="lblPlantEnvironmentInfo">
         <property name="geometry">
          <rect>
           <x>10</x>
@@ -657,7 +657,7 @@
          <string>环境信息</string>
         </property>
        </widget>
-       <widget class="QLabel" name="label_18">
+       <widget class="QLabel" name="lblAirHumidityTitle">
         <property name="geometry">
          <rect>
           <x>30</x>
@@ -670,7 +670,7 @@
          <string>空气湿度：</string>
         </property>
        </widget>
-       <widget class="QLabel" name="label_19">
+       <widget class="QLabel" name="lblAirTemperatureTitle">
         <property name="geometry">
          <rect>
           <x>30</x>
@@ -683,7 +683,7 @@
          <string>空气温度：</string>
         </property>
        </widget>
-       <widget class="QLabel" name="label_20">
+       <widget class="QLabel" name="lblSoilMoistureTitle">
         <property name="geometry">
          <rect>
           <x>270</x>
@@ -696,7 +696,7 @@
          <string>土壤湿度：</string>
         </property>
        </widget>
-       <widget class="QLabel" name="label_21">
+       <widget class="QLabel" name="lblLightIntensityTitle">
         <property name="geometry">
          <rect>
           <x>270</x>
@@ -709,7 +709,7 @@
          <string>光照强度：</string>
         </property>
        </widget>
-       <widget class="QLabel" name="label_31">
+       <widget class="QLabel" name="lblAirTemperature">
         <property name="geometry">
          <rect>
           <x>110</x>
@@ -719,10 +719,10 @@
          </rect>
         </property>
         <property name="text">
-         <string>TextLabel</string>
+         <string> </string>
         </property>
        </widget>
-       <widget class="QLabel" name="label_32">
+       <widget class="QLabel" name="lblAirHumidity">
         <property name="geometry">
          <rect>
           <x>110</x>
@@ -732,10 +732,10 @@
          </rect>
         </property>
         <property name="text">
-         <string>TextLabel</string>
+         <string> </string>
         </property>
        </widget>
-       <widget class="QLabel" name="label_33">
+       <widget class="QLabel" name="lblLightIntensity">
         <property name="geometry">
          <rect>
           <x>350</x>
@@ -745,10 +745,10 @@
          </rect>
         </property>
         <property name="text">
-         <string>TextLabel</string>
+         <string> </string>
         </property>
        </widget>
-       <widget class="QLabel" name="label_34">
+       <widget class="QLabel" name="lblSoilMoisture">
         <property name="geometry">
          <rect>
           <x>350</x>
@@ -758,7 +758,7 @@
          </rect>
         </property>
         <property name="text">
-         <string>TextLabel</string>
+         <string> </string>
         </property>
        </widget>
       </widget>

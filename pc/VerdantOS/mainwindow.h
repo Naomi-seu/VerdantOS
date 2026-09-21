@@ -3,6 +3,7 @@
 
 #include <QMainWindow>
 #include <QSerialPort>
+#include <QTreeWidgetItem>
 QT_BEGIN_NAMESPACE
 namespace Ui {
 class MainWindow;
@@ -44,9 +45,14 @@ private slots:
 
     void on_btnMCIDStop1_clicked();
 
+    void onPlantTreeItemClicked(QTreeWidgetItem *item, int column);
+
+    void on_btnStartInference_clicked();
+
 private:
     Ui::MainWindow *ui;
     void initPlantTree();
     QSerialPort *serialPort;
+    void resetPagePlant();
 };
 #endif // MAINWINDOW_H

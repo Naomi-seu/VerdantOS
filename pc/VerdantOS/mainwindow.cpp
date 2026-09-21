@@ -96,7 +96,9 @@ MainWindow::MainWindow(QWidget *parent)
         QMessageBox::information(this,"取消系统设置","功能开发中");
     });
 
-    //打开窗口时发送一个0xaa
+    //点击植物结构树条目
+    connect(ui->treePlants,&QTreeWidget::itemClicked,this,&MainWindow::onPlantTreeItemClicked);
+    //打开窗口时发送一个0xff
     //serialPort->write(QByteArray(1, char(0xff)));
 
 }
@@ -170,6 +172,7 @@ void MainWindow::initPlantTree()
 void MainWindow::on_btnPlant_clicked()
 {
     ui->mainStack->setCurrentWidget(ui->pagePlant);
+    resetPagePlant();
 }
 
 //切换到设备管理主视图
@@ -251,5 +254,103 @@ void MainWindow::on_btnMCIDStop1_clicked()
 {
     qDebug() << "Stop button clicked";
     serialPort->write(QByteArray(1, char(0x02)));
+}
+
+//根据植物节点更改界面
+void MainWindow::onPlantTreeItemClicked(QTreeWidgetItem *item, int column)
+{
+    QString plantName = item->text(column);
+
+    if (plantName == "迷你岩桐")
+    {
+        resetPagePlant();
+        ui->lblPlantName->setText("迷你岩桐");
+        ui->lblPlantAlias->setText("尤利娅");
+        ui->lblPlantID->setText("MNYT007");
+        ui->lblPlantVariety->setText("尤利娅");
+        ui->lblPlantColor->setText("粉紫");
+        ui->txtPlantDiary->setPlainText("2023年购入");
+        ui->txtCareLog->setPlainText("上次浇水：9.17");
+        ui->cmbPlantType->setCurrentIndex(2);
+
+        ui->lblAirTemperature->setText("31℃");
+        ui->lblAirHumidity->setText("30%");
+        ui->lblLightIntensity->setText("强");
+        ui->lblSoilMoisture->setText("60%");
+    }
+    else if (plantName == "海豚花")
+    {
+        resetPagePlant();
+        ui->lblPlantName->setText("海豚花");
+        ui->lblPlantAlias->setText("-");
+        ui->lblPlantID->setText("HT002");
+        ui->lblPlantVariety->setText("蓝色海豚花");
+        ui->lblPlantColor->setText("蓝色");
+        ui->txtPlantDiary->setPlainText("2026年4月购入");
+        ui->txtCareLog->setPlainText("上次浇水：9.17");
+        ui->cmbPlantType->setCurrentIndex(1);
+
+
+        ui->lblAirTemperature->setText("31℃");
+        ui->lblAirHumidity->setText("30%");
+        ui->lblLightIntensity->setText("强");
+        ui->lblSoilMoisture->setText("20%");
+    }
+    else
+    {
+        resetPagePlant();
+        ui->lblPlantName->setText(plantName);
+    }
+}
+
+void MainWindow::resetPagePlant()
+{
+    //清空植物管理的参数
+
+    //问题推理widget
+    ui->cmbSymptom1->setCurrentIndex(0);
+    ui->cmbSymptom2->setCurrentIndex(0);
+    ui->cmbSymptom3->setCurrentIndex(0);
+    ui->txtInferenceResult->clear();
+
+    //基础信息widget
+    ui->cmbPlantType->setCurrentIndex(0);
+    ui->lblPlantName->clear();
+    ui->lblPlantAlias->clear();
+    ui->lblPlantID->clear();
+    ui->lblPlantVariety->clear();
+    ui->lblPlantColor->clear();
+    ui->txtPlantDiary->clear();
+    ui->txtCareLog->clear();
+
+    //环境信息widget
+    ui->lblAirTemperature->clear();
+    ui->lblAirHumidity->clear();
+    ui->lblLightIntensity->clear();
+    ui->lblSoilMoisture->clear();
+}
+
+void MainWindow::on_btnStartInference_clicked()
+{
+    int symptom1 = ui->cmbSymptom1->currentIndex();
+    int symptom2 = ui->cmbSymptom2->currentIndex();
+    int symptom3 = ui->cmbSymptom3->currentIndex();
+
+    if(symptom1==1)
+    {
+        if(symptom2==1)
+        {
+            if(symptom3==1)
+            {
+                ui->txtInferenceResult->setPlainText("症状1：叶子发蔫\n症状2：杆子发黑\n症状3：盆土沉\n结合当前温湿度，有90%概率为闷根。\n建议检查植物是否烂根。");
+            }
+            else
+            ui->txtInferenceResult->setPlainText("症状1：叶子发蔫\n症状2：杆子发黑\n结合当前温湿度，有70%概率为闷根。\n可进一步补充信息。\n");
+        }
+        else
+        {
+            ui->txtInferenceResult->setPlainText("症状1：叶子发蔫\n结合当前温湿度，有50%概率为缺水。\n可进一步补充信息。\n");
+        }
+    }
 }
 
